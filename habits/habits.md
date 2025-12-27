@@ -1,4 +1,10 @@
-The Seven Habits of Effective Agentic Systems
+---
+layout: default
+title: Habits
+permalink: /habits/
+---
+
+# The Seven Habits of Effective Agentic Systems
 
 The habits described here are recurring design patterns observed in agentic systems that succeed in real production environments.
 
@@ -13,7 +19,7 @@ When they are absent, failures are often surprising, difficult to diagnose, and 
 
 Each habit has its own page with a deeper explanation, including intent, scope, governance implications, common failure modes, and examples.
 
-1. Clearly Bounded Role
+## 1. Clearly Bounded Role
 
 Effective agents serve a narrowly defined function within a larger system.
 
@@ -23,7 +29,7 @@ This habit addresses the most common early mistake in agentic design: assigning 
 
 Read more: /habits/habit-1
 
-2. Embedded in Workflows
+## 2. Embedded in Workflows
 
 Agents create the most value when they operate inside existing workflows rather than above or outside them.
 
@@ -33,7 +39,7 @@ This habit prioritizes integration over replacement.
 
 Read more: /habits/habit-2
 
-3. Explicit Constraints
+## 3. Explicit Constraints
 
 Effective agents operate under clearly defined permissions, limitations, and escalation paths.
 
@@ -43,7 +49,7 @@ This habit forms the foundation of governance.
 
 Read more: /habits/habit-3
 
-4. Defers Irreversibility
+## 4. Defers Irreversibility
 
 Agents can propose, recommend, summarize, and explain.
 
@@ -53,7 +59,7 @@ This habit reframes caution as maturity.
 
 Read more: /habits/habit-4
 
-5. Optimizes for System Outcomes
+## 5. Optimizes for System Outcomes
 
 Effective agents are evaluated on system-level impact, not local intelligence.
 
@@ -63,7 +69,7 @@ This habit aligns agent design with organizational outcomes.
 
 Read more: /habits/habit-5
 
-6. Progress Through Structure
+## 6. Progress Through Structure
 
 As agentic systems mature, structure increases rather than decreases.
 
@@ -73,7 +79,7 @@ This habit runs counter to the intuition that maturity equals autonomy.
 
 Read more: /habits/habit-6
 
-7. Visible Accountability
+## 7. Visible Accountability
 
 Well-designed agentic systems make ownership clearer, not fuzzier.
 

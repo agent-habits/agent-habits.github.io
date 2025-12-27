@@ -27,7 +27,7 @@ They are designed to reduce ambiguity in a specific domain, not to own outcomes 
 
 This habit addresses the most common early mistake in agentic design: assigning broad responsibility without clear purpose.
 
-Read more: /habits/habit-1
+Read more: [Habit 1]({{ '/habits/habit-1/' | relative_url }})
 
 ## 2. Embedded in Workflows
 
@@ -37,7 +37,7 @@ They translate unstructured input into structured signals that downstream system
 
 This habit prioritizes integration over replacement.
 
-Read more: /habits/habit-2
+Read more: [Habit 2]({{ '/habits/habit-2/' | relative_url }})
 
 ## 3. Explicit Constraints
 
@@ -47,7 +47,7 @@ Constraints are part of the interface. They define what the agent may do directl
 
 This habit forms the foundation of governance.
 
-Read more: /habits/habit-3
+Read more: [Habit 3]({{ '/habits/habit-3/' | relative_url }})
 
 ## 4. Defers Irreversibility
 
@@ -57,7 +57,7 @@ They defer irreversible actions to humans or policy-controlled systems, especial
 
 This habit reframes caution as maturity.
 
-Read more: /habits/habit-4
+Read more: [Habit 4]({{ '/habits/habit-4/' | relative_url }})
 
 ## 5. Optimizes for System Outcomes
 
@@ -67,7 +67,7 @@ Success is measured in reduced cognitive load, improved handoffs, faster resolut
 
 This habit aligns agent design with organizational outcomes.
 
-Read more: /habits/habit-5
+Read more: [Habit 5]({{ '/habits/habit-5/' | relative_url }})
 
 ## 6. Progress Through Structure
 
@@ -77,7 +77,7 @@ Interfaces narrow, permissions tighten, playbooks become explicit, and responsib
 
 This habit runs counter to the intuition that maturity equals autonomy.
 
-Read more: /habits/habit-6
+Read more: [Habit 6]({{ '/habits/habit-6/' | relative_url }})
 
 ## 7. Visible Accountability
 
@@ -85,4 +85,4 @@ Well-designed agentic systems make ownership clearer, not fuzzier.
 
 For meaningful actions, it should be possible to understand why a decision was made, what information was used, and who ultimately owned the outcome. When accountability decreases, the system is regressing.
 
-Read more: /habits/habit-7
+Read more: [Habit 7]({{ '/habits/habit-7/' | relative_url }})

@@ -1,0 +1,5 @@
+# Ignore local tooling and generated assets
+/tools/
+
+# Jekyll/_site output (if you build locally)
+/_site/

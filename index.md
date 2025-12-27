@@ -6,8 +6,6 @@ They are governed components designed to reduce ambiguity, improve decisions, an
 
 This project defines a canonical set of habits observed in agentic systems that reliably create value in real production environments.
 
-[![GitHub stars](https://img.shields.io/github/stars/agent-habits/agent-habits.github.io?style=social)](https://github.com/agent-habits/agent-habits.github.io)
-
 ## Why This Exists
 
 As AI agents become more capable, many teams attempt to give them broad autonomy across workflows, systems, and business processes.

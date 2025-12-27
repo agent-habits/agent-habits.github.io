@@ -1,0 +1,33 @@
+<nav class="site-header" role="navigation">
+  <div class="site-left">
+    <a class="site-brand" href="{{ '/' | relative_url }}">
+      <img class="site-logo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title | default: 'Agentic Systems Habits' }}" />
+      <span class="site-title">{{ site.title | default: "Agentic Systems Habits" }}</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/habits/' | relative_url }}">Habits</a></li>
+      <li><a href="{{ '/governance/' | relative_url }}">Governance</a></li>
+    </ul>
+  </div>
+
+  <div class="site-right">
+    <a class="repo-star" href="https://github.com/agent-habits/agent-habits.github.io" target="_blank" rel="noopener">
+      <img alt="GitHub stars" src="https://img.shields.io/github/stars/agent-habits/agent-habits.github.io?style=social" />
+    </a>
+  </div>
+</nav>
+
+<style>
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem 1rem;border-bottom:1px solid rgba(0,0,0,0.05)}
+.site-left{display:flex;align-items:center;gap:1rem}
+.site-brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:inherit}
+.site-title{font-weight:600}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:.75rem}
+.nav-links a{text-decoration:none;color:inherit;padding:.25rem .5rem;border-radius:4px}
+.nav-links a:hover{background:rgba(0,0,0,0.03)}
+.site-logo{width:40px;height:40px;object-fit:contain;border-radius:4px;margin-right:.5rem}
+.repo-star img{height:28px}
+@media (max-width:640px){ .nav-links{display:none} }
+</style>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 2: Embedded in Workflows
+title: "Habit 2: Embedded in Workflows"
 permalink: /habits/habit-2/
 ---
 

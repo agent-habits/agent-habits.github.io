@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 3: Explicit Constraints
+title: "Habit 3: Explicit Constraints"
 permalink: /habits/habit-3/
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 5: Optimizes for System Outcomes
+title: "Habit 5: Optimizes for System Outcomes"
 permalink: /habits/habit-5/
 ---
 

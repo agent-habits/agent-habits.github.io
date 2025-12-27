@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 6: Progress Through Structure
+title: "Habit 6: Progress Through Structure"
 permalink: /habits/habit-6/
 ---
 

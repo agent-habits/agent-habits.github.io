@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 7: Visible Accountability
+title: "Habit 7: Visible Accountability"
 permalink: /habits/habit-7/
 ---
 

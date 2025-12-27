@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 1: Clearly Bounded Role
+title: "Habit 1: Clearly Bounded Role"
 permalink: /habits/habit-1/
 ---
 

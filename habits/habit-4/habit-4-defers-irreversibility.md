@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Habit 4: Defers Irreversibility  
+title: "Habit 4: Defers Irreversibility" 
 permalink: /habits/habit-4/
 ---
 

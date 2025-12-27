@@ -122,20 +122,3 @@ It is not intended to dictate implementation details or replace engineering judg
 The habits describe patterns that tend to hold across domains and technologies.
 
 They are most useful when treated as tools for reasoning, not as rules to enforce.
-
----
-
-This now reads like something that belongs in:
-
-* an open source repo
-* an internal architecture guide
-* a design review appendix
-* a governance discussion
-
-Next logical additions, if you want to continue strengthening the “field guide” feel:
-
-* A short **Anti-patterns** page mapping failures to missing habits
-* A **Glossary** page defining key terms precisely
-* A **Comparison** page situating this alongside other AI frameworks
-
-Say which direction you want to go next.

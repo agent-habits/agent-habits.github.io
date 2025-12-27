@@ -112,3 +112,5 @@ Constraints do not reduce autonomy.
 They define it.
 
 An agent that understands its limits is safer, more predictable, and ultimately more valuable than one that does not.
+
+**[Habit 2 <-]({{ '/habits/habit-2/' | relative_url }}) | [-> Habit 3]({{ '/habits/habit-3/' | relative_url }})**

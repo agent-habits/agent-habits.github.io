@@ -111,3 +111,5 @@ It is respect for impact.
 
 The most effective agentic systems know when to act and when not to.
 That distinction is not accidental. It is designed.
+
+**[Habit 3 <-]({{ '/habits/habit-3/' | relative_url }}) | [-> Habit 4]({{ '/habits/habit-4/' | relative_url }})**

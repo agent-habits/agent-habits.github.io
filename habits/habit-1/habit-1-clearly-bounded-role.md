@@ -111,3 +111,5 @@ It concentrates it.
 
 The fastest way to make an agent dangerous is to make it responsible for too much.
 The fastest way to make it valuable is to be precise about why it exists.
+
+**[-> Habit 2]({{ '/habits/habit-2/' | relative_url }})**

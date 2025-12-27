@@ -44,15 +44,15 @@ It does not claim completeness, nor does it prescribe a single correct implement
 
 ## The Seven Habits
 
-1. Clearly Bounded Role
-2. Embedded in Workflows
-3. Explicit Constraints
-4. Defers Irreversibility
-5. Optimizes for System Outcomes
-6. Progress Through Structure
-7. Visible Accountability
+1. [Clearly Bounded Role]({{ '/habits/habit-1/' | relative_url }})
+2. [Embedded in Workflows]({{ '/habits/habit-2/' | relative_url }})
+3. [Explicit Constraints]({{ '/habits/habit-3/' | relative_url }})
+4. [Defers Irreversibility]({{ '/habits/habit-4/' | relative_url }})
+5. [Optimizes for System Outcomes]({{ '/habits/habit-5/' | relative_url }})
+6. [Progress Through Structure]({{ '/habits/habit-6/' | relative_url }})
+7. [Visible Accountability]({{ '/habits/habit-7/' | relative_url }})
 
-Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples.
+Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples. See also [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }}) page for examples and practical guidance.
 
 ## Governance First
 
@@ -61,6 +61,8 @@ Governance is not an afterthought.
 In this framework, governance is a design property expressed through scope, constraints, escalation paths, and accountability.
 
 A system that becomes less governable as it becomes more intelligent is not progressing.
+
+See [Governance]({{ '/governance/' | relative_url }}) page for the governance lens applied across all habits.
 
 ## Open Source and Contribution
 

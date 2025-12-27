@@ -79,4 +79,4 @@ This page represents the current canonical version of the Agentic Systems Habits
 Revisions are intentional, documented, and guided by real-world experience.
 
 ---
-**Maintainer & Creator:** Inbar Rose — https://inbarrose.com
+**Maintainer & Creator:** Inbar Rose — <https://inbarrose.com>

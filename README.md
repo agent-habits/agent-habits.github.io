@@ -77,7 +77,7 @@ The habit definitions themselves are curated and versioned to preserve clarity a
 See CONTRIBUTING.md for details.
 
 ---
-**Maintainer & Creator:** Inbar Rose — https://inbarrose.com
+**Maintainer & Creator:** Inbar Rose — <https://inbarrose.com>
 
 ## License and Attribution
 

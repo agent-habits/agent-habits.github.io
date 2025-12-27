@@ -1,0 +1,129 @@
+/* Header styles extracted from _includes/site-header.html */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+}
+
+.site-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+    color: inherit
+}
+
+.site-title {
+    font-weight: 600
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: .75rem
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    padding: .4rem .75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    transition: background .12s ease, transform .06s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px)
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-right: .5rem
+}
+
+.repo-star img {
+    height: 28px
+}
+
+/* Responsive: show toggle and hide nav by default on small screens */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: .25rem;
+    border-radius: 6px
+}
+
+.nav-toggle svg {
+    display: block
+}
+
+@media (max-width:640px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        background: var(--site-bg, #fff);
+        padding: 0.5rem 1rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        gap: .5rem
+    }
+
+    .nav-links[hidden] {
+        display: none
+    }
+
+    .nav-toggle {
+        display: inline-flex
+    }
+
+    .site-right {
+        display: flex;
+        align-items: center;
+        gap: .5rem
+    }
+
+    .site-header {
+        position: relative
+    }
+}
+
+/* When nav is open, prevent body scroll (applied via JS) */
+.nav-open {
+    overflow: hidden;
+}
+
+/* small visual adjustments for nav buttons in column */
+@media (max-width:640px) {
+    .nav-links a {
+        display: block;
+        padding: .6rem .75rem
+    }
+}
+
+/* Simple focus styles */
+.nav-toggle:focus,
+.nav-links a:focus {
+    outline: 3px solid rgba(10, 102, 194, 0.15);
+    outline-offset: 2px
+}

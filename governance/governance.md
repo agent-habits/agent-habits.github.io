@@ -1,3 +1,9 @@
+---
+layout: default
+title: Governance
+permalink: /governance/
+---
+
 # Governance Philosophy
 
 Governance is not a control mechanism layered on top of agentic systems after deployment.

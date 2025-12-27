@@ -6,9 +6,9 @@ permalink: /
 
 # The 7 Habits of Effective Agentic Systems
 
-Effective agentic systems are governed components that reduce ambiguity, improve decisions, and increase reliability — not autonomous actors.
+Effective agentic systems are governed components with clearly bounded roles that are embedded into workflows which reduces ambiguity, improves decisions, and provides measureable outcomes.
 
-TL;DR — This framework captures seven practical habits that make agents safe, useful, and auditable in production:
+TL;DR: This framework captures seven practical habits that make agents safe, useful, and auditable in production:
 
 1. [Clearly Bounded Role]({{ '/habits/habit-1/' | relative_url }}) — narrow, well-scoped responsibilities that limit blast radius and set clear expectations.
 2. [Embedded in Workflows]({{ '/habits/habit-2/' | relative_url }}) — agents work inside existing processes, producing structured signals humans and systems can act on.
@@ -24,7 +24,7 @@ Use governance as the lens: if a habit is missing or reversed, treat it as a gov
 
 They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability. See the See [Governance]({{ '/governance/' | relative_url }}) page.
 
-This project defines a canonical set of habits observed in agentic systems that reliably create value in real production environments.
+This project defines these as a canonical set of habits observed in agentic systems that reliably create value in real production environments.
 
 ## Why This Exists
 

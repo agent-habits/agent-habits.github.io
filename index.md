@@ -1,3 +1,9 @@
+---
+layout: default
+title: "The 7 Habits of Effective Agentic Systems"
+permalink: /
+---
+
 # The 7 Habits of Effective Agentic Systems
 
 Effective agentic systems are not autonomous actors.

@@ -30,3 +30,16 @@ Contributions should aim to improve understanding, not expand scope.
 - Open an issue for discussion
 - Submit a pull request with clear context
 - Reference the habit your contribution supports or critiques
+
+## Pull Request Guidance
+
+- Create focused PRs with a single intent (typo fix, add example, reorganize a single page).
+- Use the following PR template in the description:
+	- **Summary:** One-line summary of the change.
+	- **Related habit(s):** Which habit(s) this maps to (if any).
+	- **Motivation:** Why this improves clarity or adds value.
+	- **Notes for reviewers:** Any build or review steps.
+
+## Maintainer / Contact
+
+The project is maintained by Inbar Rose. For contributor questions or editorial discussions, open an issue or visit https://inbarrose.com.

@@ -3,40 +3,45 @@
 
 Purpose: quickly orient an AI coding agent to be immediately productive in this repo.
 
-- **Big picture:** This repository is a small Jekyll/GitHub Pages documentation site that publishes the "7 Habits" framework. Content lives as Markdown pages (top-level .md files) and site-wide settings live in `_config.yml`.
+- **Big picture:** a small Jekyll/GitHub Pages docs site that publishes the "7 Habits" framework. Content is Markdown (top-level pages and `habits/*` pages). Site config lives in `_config.yml`; theme override is in `_layouts/default.html` and header in `_includes/site-header.html`.
 
-- **Key files to inspect:** [README.md](README.md), [index.md](index.md), [habits.md](habits.md), [governance.md](governance.md), [CONTRIBUTING.md](CONTRIBUTING.md), and `_config.yml` (site config).
+- **Key files / dirs:** [README.md](README.md), [index.md](index.md), `habits/` (per-habit pages), `governance/governance.md`, [CONTRIBUTING.md](CONTRIBUTING.md), `_config.yml`, `_layouts/default.html`, `_includes/site-header.html`, `assets/images/`, `tools/`.
 
-- **Architecture summary:** static content only — no application code, build scripts, or tests. Pages are authored as markdown; the site relies on GitHub Pages / Jekyll default build (theme `minima` set in `_config.yml`).
+- **What this repo is:** static documentation and design guidance — no application code, CI, or tests. Use GitHub Pages / Jekyll for publishing.
 
-- **Primary workflows an agent may help with:**
-  - Editing or reorganizing content in Markdown pages (preserve intent and editorial voice).
-  - Adding examples or case studies mapped to a specific habit (update `habits.md` or add new page and link from index).
-  - Updating governance or contribution docs (`governance.md`, `CONTRIBUTING.md`).
+- **Primary agent workflows:**
+  - Edit or refine Markdown copy while preserving voice (concise, governance-first).
+  - Add example pages under `habits/` and link from `habits/habits.md`.
+  - Small UI/UX tweaks to the site (includes, layout, favicon support) — keep changes minimal and reversible.
 
-- **Build / preview commands (discoverable):**
-  - Local preview (if contributors want local Jekyll preview): `bundle exec jekyll serve` (standard Ruby/Jekyll flow). If `bundle` not available, note that GitHub Pages will still build on push.
+- **Local preview:**
+  - If you have Ruby/bundler: `bundle install` then `bundle exec jekyll serve --livereload`.
+  - Or use Docker: `docker run --rm -it -v ${PWD}:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve --livereload --host 0.0.0.0`.
 
-- **Repository conventions and patterns:**
-  - Content is authoritative and curated. The maintainer retains editorial authority (see [CONTRIBUTING.md](CONTRIBUTING.md)).
-  - Habit definitions are intentionally stable; supporting material can be extended but avoid adding new top-level "habits" without discussion.
-  - Prefer adding examples as concrete, referenced case studies that map to one or more habits (update `habits.md` or create a new markdown page and link it).
+- **Repo conventions & guidance:**
+  - Preserve voice: concise, design-focused, governance-first.
+  - Use `{{ '/path/' | relative_url }}` for internal links so `baseurl` is respected.
+  - Open an issue for editorial or structural changes; create focused PRs mapped to a single habit or change.
+  - Maintain historical stability of the seven habits; avoid adding new top-level habits without discussion.
 
-- **Editing guidelines for AI agents:**
-  - Preserve the existing voice: concise, design-focused, governance-first. Small wording improvements okay; do not change the intent of any habit.
-  - When adding content, include a brief note in the PR description mapping the change to a habit and why it improves clarity.
-  - For structural changes (new pages, renaming), open an issue first per [CONTRIBUTING.md](CONTRIBUTING.md) and mention the maintainer.
+- **Files added by agents/tools:**
+  - `_includes/site-header.html` (site header/navigation)
+  - `_layouts/default.html` (layout override to include header)
+  - `tools/generate-favicons.ps1` (PowerShell helper — optional local tool)
+  - `assets/images/favicon.svg` (fallback favicon)
+  - `.gitignore` contains `tools/` and generated favicon names by default; remove those lines if you want generated images tracked.
 
-- **Examples (how to apply edits):**
-  - To add a real-world example for Habit 2 (Embedded in Workflows): create `examples/embedded-workflow-<short>.md`, add front-matter with `title:` and `layout:`, and add a link from `habits.md` under the Habit 2 section.
-  - To refine wording across site: update the canonical paragraph in [README.md](README.md) or [index.md](index.md) and keep changes minimal — prefer sentence-level edits.
+- **Editing rules for AI agents:**
+  - Do not change the intent of any habit. Edits must be editorial (clarity, grammar, small restructuring) and preserve meaning.
+  - When adding examples, include front-matter (`title`, `layout`, `permalink`) and add a single link from `habits/habits.md`.
+  - When changing layout/includes, keep changes minimal and explain why in the PR description.
 
-- **Automation & PR tips for agents:**
-  - Create focused PRs with a single intent (typo fix, add example, reorganize a single page).
-  - Use the PR description to reference the habit(s) affected and link to the issue if one exists.
+- **PR template suggestion (use in PR body):**
+  - **Summary:** One-line summary
+  - **Related habit(s):** (if applicable)
+  - **Why:** short rationale
+  - **Testing:** how to preview locally
 
-- **What not to do:**
-  - Don't invent new habits or expand the canonical set without prior discussion.
-  - Don't add marketing, vendor comparisons, or speculative frameworks — repository explicitly avoids those (see README).
+- **Maintainer / Contact:** Inbar Rose — https://inbarrose.com (the maintainer has editorial authority; use issues for discussion).
 
-If any section above feels incomplete or you want more examples (front-matter template, example PR body, or a sample example page), tell me which piece to expand and I'll update this file.
+If you want a runnable task (generate favicons, add an example page, or update phrasing across files), say which action and I will implement it.

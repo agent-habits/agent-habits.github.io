@@ -77,3 +77,6 @@ If you are designing, deploying, or governing agentic systems, this framework is
 This page represents the current canonical version of the Agentic Systems Habits framework.
 
 Revisions are intentional, documented, and guided by real-world experience.
+
+---
+**Maintainer & Creator:** Inbar Rose — https://inbarrose.com

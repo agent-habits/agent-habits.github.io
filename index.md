@@ -6,9 +6,23 @@ permalink: /
 
 # The 7 Habits of Effective Agentic Systems
 
-Effective agentic systems are not autonomous actors.
+Effective agentic systems are governed components that reduce ambiguity, improve decisions, and increase reliability — not autonomous actors.
 
-They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability.
+TL;DR — This framework captures seven practical habits that make agents safe, useful, and auditable in production:
+
+1. [Clearly Bounded Role]({{ '/habits/habit-1/' | relative_url }}) — narrow, well-scoped responsibilities that limit blast radius and set clear expectations.
+2. [Embedded in Workflows]({{ '/habits/habit-2/' | relative_url }}) — agents work inside existing processes, producing structured signals humans and systems can act on.
+3. [Explicit Constraints]({{ '/habits/habit-3/' | relative_url }}) — permissions, limits, and escalation paths are part of the interface, not an afterthought.
+4. [Defers Irreversibility]({{ '/habits/habit-4/' | relative_url }}) — agents recommend and explain; irreversible actions require human or policy-controlled approval.
+5. [Optimizes for System Outcomes]({{ '/habits/habit-5/' | relative_url }}) — success is measured by reliability, reduced cognitive load, and improved handoffs.
+6. [Progress Through Structure]({{ '/habits/habit-6/' | relative_url }}) — maturity tightens interfaces and playbooks; structure enables safer capability.
+7. [Visible Accountability]({{ '/habits/habit-7/' | relative_url }}) — every meaningful action should show who owned it, why it happened, and what data informed it.
+
+Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples. See also [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }}) page for examples and practical guidance.
+
+Use governance as the lens: if a habit is missing or reversed, treat it as a governance failure to investigate.
+
+They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability. See the See [Governance]({{ '/governance/' | relative_url }}) page.
 
 This project defines a canonical set of habits observed in agentic systems that reliably create value in real production environments.
 
@@ -41,28 +55,6 @@ This is not a tutorial.
 It is not a maturity model, a reference architecture, or a vendor comparison.
 
 It does not claim completeness, nor does it prescribe a single correct implementation.
-
-## The Seven Habits
-
-1. [Clearly Bounded Role]({{ '/habits/habit-1/' | relative_url }})
-2. [Embedded in Workflows]({{ '/habits/habit-2/' | relative_url }})
-3. [Explicit Constraints]({{ '/habits/habit-3/' | relative_url }})
-4. [Defers Irreversibility]({{ '/habits/habit-4/' | relative_url }})
-5. [Optimizes for System Outcomes]({{ '/habits/habit-5/' | relative_url }})
-6. [Progress Through Structure]({{ '/habits/habit-6/' | relative_url }})
-7. [Visible Accountability]({{ '/habits/habit-7/' | relative_url }})
-
-Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples. See also [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }}) page for examples and practical guidance.
-
-## Governance First
-
-Governance is not an afterthought.
-
-In this framework, governance is a design property expressed through scope, constraints, escalation paths, and accountability.
-
-A system that becomes less governable as it becomes more intelligent is not progressing.
-
-See [Governance]({{ '/governance/' | relative_url }}) page for the governance lens applied across all habits.
 
 ## Open Source and Contribution
 

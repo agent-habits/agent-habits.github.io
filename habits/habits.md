@@ -86,3 +86,13 @@ Well-designed agentic systems make ownership clearer, not fuzzier.
 For meaningful actions, it should be possible to understand why a decision was made, what information was used, and who ultimately owned the outcome. When accountability decreases, the system is regressing.
 
 Read more: [Habit 7]({{ '/habits/habit-7/' | relative_url }})
+
+## Conclusion
+
+Effective agentic systems are not autonomous actors.
+
+They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability.
+
+This project defines a canonical set of habits observed in agentic systems that reliably create value in real production environments.
+
+To apply these habits in practice, please read: [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }})

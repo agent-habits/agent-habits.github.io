@@ -109,4 +109,4 @@ Structure proves it.
 The most effective agentic systems do not grow looser as they mature.
 They grow clearer.
 
-**[Habit 5 <-]({{ '/habits/habit-5/' | relative_url }}) | [-> Habit 6]({{ '/habits/habit-6/' | relative_url }})**
+**[Habit 5 <-]({{ '/habits/habit-5/' | relative_url }})** : **[-> Habit 7]({{ '/habits/habit-7/' | relative_url }})**

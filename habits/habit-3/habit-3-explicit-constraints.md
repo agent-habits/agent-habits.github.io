@@ -113,4 +113,4 @@ They define it.
 
 An agent that understands its limits is safer, more predictable, and ultimately more valuable than one that does not.
 
-**[Habit 2 <-]({{ '/habits/habit-2/' | relative_url }}) | [-> Habit 3]({{ '/habits/habit-3/' | relative_url }})**
+**[Habit 2 <-]({{ '/habits/habit-2/' | relative_url }})** : **[-> Habit 4]({{ '/habits/habit-4/' | relative_url }})**

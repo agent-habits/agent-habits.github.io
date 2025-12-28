@@ -117,4 +117,4 @@ It redistributes it.
 Effective agentic systems do not hide accountability behind intelligence.
 They surface it.
 
-**[Habit 6 <-]({{ '/habits/habit-5/' | relative_url }})**
+**[Habit 6 <-]({{ '/habits/habit-6/' | relative_url }})**

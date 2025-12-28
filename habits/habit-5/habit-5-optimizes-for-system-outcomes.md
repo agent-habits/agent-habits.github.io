@@ -107,4 +107,4 @@ Value is only visible in context.
 
 Agentic systems that optimize for system outcomes earn their place quietly, by making the whole work better rather than making themselves look smart.
 
-**[Habit 4 <-]({{ '/habits/habit-4/' | relative_url }}) | [-> Habit 5]({{ '/habits/habit-5/' | relative_url }})**
+**[Habit 4 <-]({{ '/habits/habit-4/' | relative_url }})** : **[-> Habit 6]({{ '/habits/habit-6/' | relative_url }})**

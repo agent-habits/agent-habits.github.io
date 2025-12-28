@@ -112,4 +112,4 @@ It is measured by how well it fits.
 
 Agents that embed themselves into workflows earn their place quietly, by making existing systems work better rather than trying to replace them.
 
-**[Habit 1 <-]({{ '/habits/habit-1/' | relative_url }}) | [-> Habit 2]({{ '/habits/habit-2/' | relative_url }})**
+**[Habit 1 <-]({{ '/habits/habit-1/' | relative_url }})** : **[-> Habit 3]({{ '/habits/habit-3/' | relative_url }})**

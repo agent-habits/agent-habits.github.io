@@ -22,7 +22,7 @@ Each habit is defined independently and includes intent, scope, governance impli
 
 Use governance as the lens: if a habit is missing or reversed, treat it as a governance failure to investigate.
 
-They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability. See the See [Governance]({{ '/governance/' | relative_url }}) page.
+They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability. See the [Governance]({{ '/governance/' | relative_url }}) page.
 
 This project defines these as a canonical set of habits observed in agentic systems that reliably create value in real production environments.
 

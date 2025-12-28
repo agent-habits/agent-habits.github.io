@@ -23,6 +23,7 @@
     <main class="site-content" role="main">
       {{ content }}
     </main>
+    {% include site-footer.html %}
     {{ content_for_footer }}
     <script src="{{ '/assets/js/site-header.js' | relative_url }}" defer></script>
   </body>

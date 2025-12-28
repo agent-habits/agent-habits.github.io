@@ -137,6 +137,36 @@ a {
     display: block
 }
 
+/* Footer styling and separators */
+.site-footer {
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 0.75rem 1rem;
+    background: transparent;
+}
+
+.site-footer-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.site-footer a { color: var(--link); text-decoration: none }
+
+.site-credit { margin: 0; }
+
+@media (max-width:640px) {
+    .site-footer-inner { flex-direction: column; align-items: flex-start; gap: .5rem }
+}
+
+/* Ensure a clear visual break between header and content */
+.site-header { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.site-content { padding-top: 1.25rem; padding-bottom: 1.25rem }
+
 @media (max-width:640px) {
     .nav-links {
         display: flex;

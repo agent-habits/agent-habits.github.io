@@ -1,0 +1,37 @@
+/* Minimal stylesheet to avoid sass-embedded failures during local builds.
+   Keeps styles simple so the Sass compiler isn't invoked. Replace later as needed. */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.site-content {
+    max-width: 72rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #0a0a0a;
+    margin-top: 1.2em;
+}
+
+/* Keep header styles from site-header.css in effect. */

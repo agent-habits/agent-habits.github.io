@@ -1,11 +1,51 @@
-/* Header styles extracted from _includes/site-header.html */
+/* Theme and header styles — technical, high-contrast palette */
+:root {
+    --site-bg: #ffffff;
+    --site-fg: #0b1720;
+    --muted: #6b7785;
+    --header-bg: #ffffff;
+    --link: #0a66c2;
+    --code-bg: #f6f8fa;
+    --code-fg: #0b1720;
+}
+
+[data-theme="dark"] {
+    --site-bg: #071522;
+    --site-fg: #e6eef6;
+    --muted: #92a8bf;
+    --header-bg: #071522;
+    --link: #66a7ff;
+    --code-bg: #041826;
+    --code-fg: #cfe9ff;
+}
+
+/* Apply theme variables globally */
+html,
+body {
+    height: 100%
+}
+
+body {
+    background: var(--site-bg);
+    color: var(--site-fg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-size: 16px
+}
+
+a {
+    color: var(--link);
+    text-decoration: underline
+}
+
+/* Header */
 .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     padding: .5rem 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: var(--header-bg)
 }
 
 .site-left {
@@ -36,7 +76,265 @@
 
 .nav-links a {
     text-decoration: none;
-    color: inherit;
+    color: var(--site-fg);
+    padding: .4rem .75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02)
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.06)
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-right: .5rem
+}
+
+.repo-star img {
+    height: 28px
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: transparent;
+    color: var(--site-fg)
+}
+
+.theme-toggle .icon-moon {
+    display: none
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: block
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: none
+}
+
+/* Responsive: show toggle and hide nav by default on small screens */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: .25rem;
+    border-radius: 6px
+}
+
+.nav-toggle svg {
+    display: block
+}
+
+@media (max-width:640px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        background: var(--site-bg);
+        padding: 0.5rem 1rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        gap: .5rem
+    }
+
+    .nav-links[hidden] {
+        display: none
+    }
+
+    .nav-toggle {
+        display: inline-flex
+    }
+
+    .site-right {
+        display: flex;
+        align-items: center;
+        gap: .5rem
+    }
+
+    .site-header {
+        position: relative
+    }
+}
+
+/* When nav is open, prevent body scroll (applied via JS) */
+.nav-open {
+    overflow: hidden
+}
+
+/* small visual adjustments for nav buttons in column */
+@media (max-width:640px) {
+    .nav-links a {
+        display: block;
+        padding: .6rem .75rem
+    }
+}
+
+/* Simple focus styles */
+.nav-toggle:focus,
+.nav-links a:focus {
+    outline: 3px solid rgba(10, 102, 194, 0.15);
+    outline-offset: 2px
+}
+
+/* Global content styles (technical, readable) */
+.site-content {
+    max-width: 72rem;
+    margin: 1.25rem auto;
+    padding: 0 1rem
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--site-fg);
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+    line-height: 1.2
+}
+
+/* Inline code and code blocks */
+code,
+kbd,
+samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Noto Mono', monospace;
+    color: var(--code-fg);
+    background: var(--code-bg);
+    padding: .1rem .25rem;
+    border-radius: 4px;
+    font-size: .95em
+}
+
+pre {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 6px
+}
+
+/* Blockquote */
+blockquote {
+    border-left: 4px solid var(--muted);
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--muted)
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0
+}
+
+table th,
+table td {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: .5rem .75rem;
+    text-align: left
+}
+
+table th {
+    background: rgba(0, 0, 0, 0.03);
+    font-weight: 600
+}
+
+/* Horizontal rule */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 2rem 0
+}
+
+/* Muted text */
+.muted,
+small {
+    color: var(--muted)
+}
+
+/* Header styles extracted from _includes/site-header.html */
+. :root {
+    . --site-bg: #ffffff;
+    . --site-fg: #0b1720;
+    . --muted: #6b7785;
+    . --header-bg: #ffffff;
+    .
+}
+
+[data-theme="dark"] {
+    --site-bg: #071021;
+    --site-fg: #e6eef6;
+    --muted: #92a8bf;
+    --header-bg: #071522;
+}
+
+/* Apply theme variables */
+body {
+    background: var(--site-bg);
+    color: var(--site-fg)
+}
+
+a {
+    color: inherit
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--header-bg);
+}
+
+.site-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+    color: inherit
+}
+
+.site-title {
+    font-weight: 600
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: .75rem
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--site-fg);
     padding: .4rem .75rem;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -61,6 +359,31 @@
 .repo-star img {
     height: 28px
 }
+
+/* Theme toggle button */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: transparent;
+    color: var(--site-fg)
+}
+
+.theme-toggle .icon-moon {
+    display: none
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: block
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: none
+}
+
 
 /* Responsive: show toggle and hide nav by default on small screens */
 .nav-toggle {

@@ -1,0 +1,8 @@
+_site
+.git
+vendor/bundle
+node_modules
+.bundle
+tmp
+*.log
+assets/main.scss

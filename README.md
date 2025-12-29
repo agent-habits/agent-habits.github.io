@@ -61,6 +61,16 @@ In this framework, governance emerges through:
 
 A system that becomes less governable as it becomes more intelligent is not improving.
 
+## Agent Habits Badge
+
+Projects that align with this framework may display the Agent Habits badge to signal intentional design and governance of agentic systems.
+
+The badge represents participation in a shared vocabulary and set of design habits, not certification or compliance.
+
+Learn more about the badge and how to use it here: <https://agent-habits.github.io/badge/>
+
+![Agent Habits Badge](/assets/badges/practices-agent-habits.svg)
+
 ## Open Source and Contributions
 
 This project is open source and intentionally curated.

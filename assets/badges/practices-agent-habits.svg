@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="190"
+  height="32"
+  viewBox="0 0 190 32"
+  role="img"
+  aria-label="Practices Effective Agent Habits"
+>
+  <!-- Background -->
+  <rect width="190" height="32" rx="6" fill="#e3e3e3ff" stroke="black"/>
+
+  <!-- Inline logo (scaled and centered) -->
+  <g transform="translate(1,1) scale(0.3)">
   <g fill="none" stroke-width="1" stroke="black">
     
     <polygon points="28,8 72,8 94,35 94,65 50,92 6,65 6,35" stroke-width="2" fill="white" />
@@ -27,4 +38,16 @@
     <polyline points="69,59 74,59 80,64"/>
     <circle cx="80" cy="64" r="3" stroke-width="0.5" fill="white"/>
   </g>
+  </g>
+
+  <!-- Text -->
+  <text
+    x="33"
+    y="18"
+    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="11"
+    fill="black"
+  >
+    Practices Effective Agent Habits
+  </text>
 </svg>

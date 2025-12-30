@@ -29,7 +29,7 @@ It should link back to the Agent Habits badge page so readers can understand its
 Example Markdown usage:
 
 ```markdown
-[![Supports Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/badge/)
+[![Practices Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/badge/)
 ```
 
 ## When to use the badge

@@ -1,45 +1,95 @@
 # Contributing
 
-Thank you for your interest in contributing.
+Thank you for your interest in contributing to the Agentic Systems Habits project.
 
-This project is open source and intentionally curated.
+This project is open source and intentionally curated. Contributions are welcomed when they improve clarity, practical understanding, and real-world applicability of the habits.
 
 ## What Contributions Are Welcome
 
-- Examples of agentic systems that map to existing habits
-- Failure analyses and postmortems
-- Tools or patterns that support specific habits
-- Critiques and limitations grounded in real experience
+We actively welcome contributions in the following areas:
+
+- Examples of agentic systems that apply one or more habits in practice
+- Case studies, failure analyses, or postmortems grounded in real systems
+- Design patterns, tools, or workflows that support specific habits
+- Constructive critiques and limitations based on hands-on experience
+- Clarifications or refinements that improve precision or readability
+
+Contributions that include concrete examples are especially encouraged.
 
 ## What Contributions Are Not
 
-- New habits without strong justification
-- Vendor marketing content
-- Abstract theory without application
+To preserve focus and signal-to-noise ratio, the following are generally not accepted:
 
-## Editorial Model
+- Proposals for new habits without strong justification and evidence
+- Vendor marketing or product promotion
+- Abstract theory without operational relevance
+- Broad rewrites that expand scope without improving clarity
 
-The habit definitions are curated and versioned.
+This framework favors depth and precision over breadth.
 
-The maintainer retains final editorial authority to preserve clarity, continuity, and intent.
+## How the Framework Evolves
 
-Contributions should aim to improve understanding, not expand scope.
+The habit definitions and governance philosophy are curated and versioned.
 
-## How to Contribute
+The maintainer retains final editorial authority to ensure continuity, coherence, and long-term usability. This is not a limitation on contribution, but a design choice to keep the framework legible and stable.
 
-- Open an issue for discussion
-- Submit a pull request with clear context
-- Reference the habit your contribution supports or critiques
+Well-argued critiques are welcome. Changes to core concepts require strong reasoning and practical grounding.
+
+## Ways to Contribute
+
+There are multiple ways to participate, depending on your interests:
+
+### Contribute a Project Example
+
+If your project applies the Agentic Systems Habits, you may submit it and it may be included in the **Projects with Good Habits** page (pending).
+
+Before submitting, we recommend completing the self-evaluation template:
+
+- Self-evaluation template: [Self-Evaluation Template](https://github.com/agent-habits/agent-habits.github.io/tools/self-assessment.md)
+
+You may submit a summarized version of your evaluation rather than the full document.
+
+### Use and Display the Badge
+
+Projects that align with the framework may display the Agent Habits badge.
+
+Badge usage guidelines are available here:
+<https://agent-habits.github.io/badge/usage/>
+
+Badge usage is self-attested and does not require approval.
+
+### Contribute Content or Improvements
+
+- Open an issue to discuss ideas or questions
+- Submit a pull request with clear scope and context
+- Reference the habit or page your contribution supports or critiques
 
 ## Pull Request Guidance
 
-- Create focused PRs with a single intent (typo fix, add example, reorganize a single page).
-- Use the following PR template in the description:
-	- **Summary:** One-line summary of the change.
-	- **Related habit(s):** Which habit(s) this maps to (if any).
-	- **Motivation:** Why this improves clarity or adds value.
-	- **Notes for reviewers:** Any build or review steps.
+Please keep pull requests focused and intentional.
+
+Recommended PR structure:
+
+- **Summary:** One-line description of the change
+- **Related habit(s):** Which habit(s) or page this maps to
+- **Motivation:** Why this improves clarity or usefulness
+- **Notes for reviewers:** Any context, tradeoffs, or review considerations
+
+Small, precise PRs are preferred over large, sweeping changes.
+
+## Community Expectations
+
+This project values:
+
+- Thoughtful disagreement
+- Practical experience
+- Respectful discussion
+- Clear reasoning
+
+The goal is shared understanding, not consensus.
 
 ## Maintainer / Contact
 
-The project is maintained by Inbar Rose. For contributor questions or editorial discussions, open an issue or visit https://inbarrose.com.
+The project is maintained by Inbar Rose.
+
+For contributor questions, editorial discussions, or clarification requests, open an issue in this repository or visit <https://inbarrose.com>.

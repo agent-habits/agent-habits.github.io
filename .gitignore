@@ -1,3 +1,3 @@
 # Jekyll/_site output (if you build locally)
-/_site/
-.jekyll-cache/
+agent-habits/_site/
+agent-habits/.jekyll-cache/

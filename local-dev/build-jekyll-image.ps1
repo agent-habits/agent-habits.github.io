@@ -6,7 +6,7 @@
   Builds an image named `agent-habits-jekyll:local` from the repository Dockerfile.
 
 .USAGE
-  .\tools\build-jekyll-image.ps1 [-Tag 'agent-habits-jekyll:local']
+  .\local-dev\build-jekyll-image.ps1 [-Tag 'agent-habits-jekyll:local']
 #>
 
 param(

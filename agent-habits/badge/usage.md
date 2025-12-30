@@ -50,6 +50,7 @@ The badge reflects alignment and intent, not perfection.
 Badge usage is self-attested.
 
 Projects are encouraged, but not required, to:
+
 - Document which habits they focus on
 - Describe known gaps or tradeoffs
 - Share lessons learned over time
@@ -59,6 +60,7 @@ Transparency strengthens the value of the badge for the community.
 ## Future evolution
 
 In the future, this project may support:
+
 - Habit-specific badges
 - Project listings with habit annotations
 - Optional evaluation templates or checklists

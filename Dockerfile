@@ -16,7 +16,7 @@ RUN apt-get update \
 WORKDIR /srv/jekyll
 
 # Copy only Gemfile and Gemfile.lock first to leverage Docker layer caching
-COPY Gemfile Gemfile.lock* ./
+COPY agent-habits/Gemfile Gemfile.lock* ./
 
 # Install bundler and gems into image (use system gems for simplicity)
 RUN gem install bundler -v "~>2.3" \

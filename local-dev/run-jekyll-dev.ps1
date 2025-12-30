@@ -7,8 +7,8 @@
   mounting the current repository so you can iterate locally.
 
 .USAGE
-  .\tools\run-jekyll-dev.ps1 [-Port 4000] [-Tag 'agent-habits-jekyll:local'] [-Rebuild]
-  .\tools\run-jekyll-dev.ps1 -Image 'agent-habits-jekyll:local'  # run only
+  .\local-dev\run-jekyll-dev.ps1 [-Port 4000] [-Tag 'agent-habits-jekyll:local'] [-Rebuild]
+  .\local-dev\run-jekyll-dev.ps1 -Image 'agent-habits-jekyll:local'  # run only
 
 PARAMETERS
   -Port   Port to publish locally (default: 4000)
@@ -31,6 +31,7 @@ if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
 }
 
 $pwdPath = (Get-Location).Path
+$sitePath = "$pwdPath/agent-habits"
 Write-Output "Repository: $pwdPath"
 Write-Output "Port: $Port"
 
@@ -49,8 +50,8 @@ if (-not $Image) {
     $imageExists = & docker images -q $Tag 2>$null
     if ($Rebuild -or [string]::IsNullOrEmpty($imageExists)) {
         Write-Output "Building image '$Tag'..."
-        if (Test-Path "tools/build-jekyll-image.ps1") {
-            try { & .\tools\build-jekyll-image.ps1 -Tag $Tag }
+        if (Test-Path "local-dev/build-jekyll-image.ps1") {
+            try { & .\local-dev\build-jekyll-image.ps1 -Tag $Tag }
             catch { Fail "Local build script failed: $_" }
         }
         else {
@@ -66,11 +67,11 @@ Write-Output "Running container from image: $imageToUse"
 
 # Run container with mounted repo
 $dockerArgs = @(
-    'run', '--rm', '-it',
-    '-v', "${pwdPath}:/srv/jekyll",
+    'run', '--rm', '-d', '--name', 'jekyll-dev',
+    '-v', "${sitePath}:/srv/jekyll",
     '-p', "${Port}:4000",
     $imageToUse,
-    'bash', '-lc',
+    'sh', '-c',
     'bundle install && bundle exec jekyll serve --livereload --host 0.0.0.0 --port 4000 --trace'
 )
 
@@ -78,8 +79,19 @@ $cmdPreview = 'docker ' + ($dockerArgs -join ' ')
 Write-Output "Running: $cmdPreview"
 
 try {
-    & docker @dockerArgs
+    $containerId = & docker @dockerArgs
+    Write-Output "Container started with ID: $containerId"
+    Start-Sleep -Seconds 10 # wait for server to start
+    Write-Output "--- Jekyll Logs ---"
+    docker logs jekyll-dev
+    Write-Output "--- End Jekyll Logs ---"
+    Write-Output "Stopping container..."
+    docker stop jekyll-dev
 }
 catch {
+    Write-Output "--- Error Running Container ---"
+    docker logs jekyll-dev
+    Write-Output "--- End Error Logs ---"
+    docker stop jekyll-dev
     Fail "Failed to run Docker. $_"
 }

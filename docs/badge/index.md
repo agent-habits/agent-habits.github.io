@@ -12,7 +12,7 @@ It is a declaration of design intent, not a certification.
 
 Projects that use this badge commit to reasoning explicitly about agent scope, constraints, deferral, accountability, and governance as their systems evolve.
 
-![Agent Habits Badge](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)
+![Agent Habits Badge]({{ '/assets/badges/practices-agent-habits.svg' | relative_url}})
 
 ## What the badge represents
 

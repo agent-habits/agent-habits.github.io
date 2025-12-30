@@ -31,7 +31,7 @@ if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
 }
 
 $pwdPath = (Get-Location).Path
-$sitePath = "$pwdPath/agent-habits"
+$sitePath = "$pwdPath/docs"
 Write-Output "Repository: $pwdPath"
 Write-Output "Port: $Port"
 
@@ -67,11 +67,11 @@ Write-Output "Running container from image: $imageToUse"
 
 # Run container with mounted repo
 $dockerArgs = @(
-    'run', '--rm', '-d', '--name', 'jekyll-dev',
+    'run', '--rm', '-it',
     '-v', "${sitePath}:/srv/jekyll",
     '-p', "${Port}:4000",
     $imageToUse,
-    'sh', '-c',
+    'bash', '-lc',
     'bundle install && bundle exec jekyll serve --livereload --host 0.0.0.0 --port 4000 --trace'
 )
 
@@ -79,19 +79,8 @@ $cmdPreview = 'docker ' + ($dockerArgs -join ' ')
 Write-Output "Running: $cmdPreview"
 
 try {
-    $containerId = & docker @dockerArgs
-    Write-Output "Container started with ID: $containerId"
-    Start-Sleep -Seconds 10 # wait for server to start
-    Write-Output "--- Jekyll Logs ---"
-    docker logs jekyll-dev
-    Write-Output "--- End Jekyll Logs ---"
-    Write-Output "Stopping container..."
-    docker stop jekyll-dev
+    & docker @dockerArgs
 }
 catch {
-    Write-Output "--- Error Running Container ---"
-    docker logs jekyll-dev
-    Write-Output "--- End Error Logs ---"
-    docker stop jekyll-dev
     Fail "Failed to run Docker. $_"
 }

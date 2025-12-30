@@ -29,7 +29,7 @@ if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
 }
 
 $pwdPath = (Get-Location).Path
-$sitePath = "$pwdPath/agent-habits"
+$sitePath = "$pwdPath/docs"
 Write-Output "Serving site from: $pwdPath"
 Write-Output "Using port: $Port"
 

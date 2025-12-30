@@ -5,3 +5,5 @@ node_modules
 .bundle
 tmp
 *.log
+assets/main.scss
+docs/assets/main.scss

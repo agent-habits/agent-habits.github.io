@@ -49,6 +49,8 @@ Some projects adopt the habits incrementally. Others use them to formalize exist
 
 Both approaches are valid.
 
+See also: [Using the Agent Habits Badge]({{ '/badge/usage/' | relative_url }})
+
 ## Relationship to governance
 
 The badge aligns with the Governance Philosophy of this project.
@@ -69,8 +71,11 @@ Projects are encouraged to:
 
 The badge exists to foster a community of practice, not to enforce compliance.
 
+Take a look at the [Self-Evaluation Template](https://github.com/agent-habits/agent-habits.github.io/tools/self-assessment.md)
+
 ## Learn more
 
 - Read the [Governance Philosophy]({{ '/governance/' | relative_url }})
 - Review the [Seven Habits]({{ '/habits/' | relative_url }})
 - Explore example systems and patterns
+- Read [Using the Agent Habits Badge]({{ '/badge/usage/' | relative_url }})

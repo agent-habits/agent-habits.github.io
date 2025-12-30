@@ -12,7 +12,7 @@ This page explains how to use the Agent Habits badge in your project and what is
 
 The canonical badge is available as an inline SVG:
 
-<https://agent-habits.github.io/assets/badges/agent-habits-badge.svg>
+<https://agent-habits.github.io/assets/badges/practices-agent-habits.svg>
 
 ![Agent Habits Badge](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)
 

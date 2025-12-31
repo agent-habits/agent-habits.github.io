@@ -38,13 +38,13 @@ The habits defined here are opinionated, intentionally scoped, and meant to guid
 
 ## The Seven Habits
 
-1. Clearly Bounded Role
-2. Embedded in Workflows
-3. Explicit Constraints
-4. Defers Irreversibility
-5. Optimizes for System Outcomes
-6. Progress Through Structure
-7. Visible Accountability
+1. [Clearly Bounded Role](https://agent-habits.github.io/habits/habit-1)
+2. [Embedded in Workflows](https://agent-habits.github.io/habits/habit-2)
+3. [Explicit Constraints](https://agent-habits.github.io/habits/habit-3)
+4. [Defers Irreversibility](https://agent-habits.github.io/habits/habit-4)
+5. [Optimizes for System Outcomes](https://agent-habits.github.io/habits/habit-5)
+6. [Progress Through Structure](https://agent-habits.github.io/habits/habit-6)
+7. [Visible Accountability](https://agent-habits.github.io/habits/habit-7)
 
 Each habit includes intent, scope, governance implications, common failure modes, and examples.
 

@@ -69,7 +69,7 @@ The badge represents participation in a shared vocabulary and set of design habi
 
 Learn more about the badge and how to use it here: <https://agent-habits.github.io/badge/>
 
-![Agent Habits Badge](/assets/badges/practices-agent-habits.svg)
+![Agent Habits Badge](/docs/assets/badges/practices-agent-habits.svg)
 
 ## Open Source and Contributions
 

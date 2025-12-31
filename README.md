@@ -86,9 +86,6 @@ The habit definitions themselves are curated and versioned to preserve clarity a
 
 See CONTRIBUTING.md for details.
 
----
-**Maintainer & Creator:** Inbar Rose — <https://inbarrose.com>
-
 ## License and Attribution
 
 This project is licensed under the MIT License.
@@ -97,8 +94,6 @@ While the license permits broad reuse, attribution is strongly encouraged when r
 
 The intent of this project is to create a shared reference point for the industry, not fragmented or rebranded variants.
 
-## Status
+---
 
-This repository represents the current canonical version of the Agentic Systems Habits framework.
-
-Revisions are intentional, documented, and guided by real-world experience.
+**Created and Curated by:** Inbar Rose — <https://inbarrose.com>

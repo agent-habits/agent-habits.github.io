@@ -48,6 +48,8 @@ The habits defined here are opinionated, intentionally scoped, and meant to guid
 
 Each habit includes intent, scope, governance implications, common failure modes, and examples.
 
+![The 7 Habits of Effective Agentic Systems](/docs/assets/images/infographic.7.agent.habits.png)
+
 ## Governance Philosophy
 
 Governance is treated as a design property, not a compliance layer.

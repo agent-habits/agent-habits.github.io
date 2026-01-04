@@ -18,6 +18,8 @@ TL;DR: This framework captures seven practical habits that make agents safe, use
 6. [Progress Through Structure]({{ '/habits/habit-6/' | relative_url }}) — maturity tightens interfaces and playbooks; structure enables safer capability.
 7. [Visible Accountability]({{ '/habits/habit-7/' | relative_url }}) — every meaningful action should show who owned it, why it happened, and what data informed it.
 
+<img src="{{ '/assets/images/infographic.7.agent.habits.png' | relative_url }}" width="70%" height="40%" align="center" alt="The 7 Habits of Effective Agentic Systems" >
+
 Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples. See also [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }}) page for examples and practical guidance.
 
 Use governance as the lens: if a habit is missing or reversed, treat it as a governance failure to investigate.
@@ -73,4 +75,5 @@ This page represents the current canonical version of the Agentic Systems Habits
 Revisions are intentional, documented, and guided by real-world experience.
 
 ---
-**Maintainer & Creator:** Inbar Rose — <https://inbarrose.com>
+
+**Created and Curated by:** Inbar Rose — <https://inbarrose.com>

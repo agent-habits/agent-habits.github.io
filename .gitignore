@@ -1,3 +1,4 @@
 # Jekyll/_site output (if you build locally)
 docs/_site/
 docs/.jekyll-cache/
+tmp/*

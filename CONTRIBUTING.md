@@ -11,6 +11,7 @@ We actively welcome contributions in the following areas:
 - Examples of agentic systems that apply one or more habits in practice
 - Case studies, failure analyses, or postmortems grounded in real systems
 - Design patterns, tools, or workflows that support specific habits
+- Additions to the [Resources page](/docs/resources/index.md), such as articles, projects, or other external links
 - Constructive critiques and limitations based on hands-on experience
 - Clarifications or refinements that improve precision or readability
 

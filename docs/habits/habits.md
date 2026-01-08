@@ -96,3 +96,5 @@ They are governed components designed to reduce ambiguity, improve decisions, an
 This project defines a canonical set of habits observed in agentic systems that reliably create value in real production environments.
 
 To apply these habits in practice, please read: [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }})
+
+For real-world examples of these habits, see the [Resources]({{ '/resources/' | relative_url }}) page.

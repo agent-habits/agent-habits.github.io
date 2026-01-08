@@ -20,6 +20,8 @@ TL;DR: This framework captures seven practical habits that make agents safe, use
 
 <img src="{{ '/assets/images/infographic.7.agent.habits.png' | relative_url }}" width="70%" height="40%" align="center" alt="The 7 Habits of Effective Agentic Systems" >
 
+To see these habits in action, check out the [Resources]({{ '/resources/' | relative_url }}) page for a curated list of articles, projects, and other real-world examples.
+
 Each habit is defined independently and includes intent, scope, governance implications, common failure modes, and examples. See also [Applying the Habits in Practice]({{ '/habits/habits-in-practice/' | relative_url }}) page for examples and practical guidance.
 
 Use governance as the lens: if a habit is missing or reversed, treat it as a governance failure to investigate.

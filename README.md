@@ -83,6 +83,7 @@ Contributions are welcome in the form of:
 * Failure analyses and postmortems
 * Tools or patterns that support existing habits
 * Thoughtful critiques grounded in experience
+* Additions to the [Resources page]({{ '/docs/resources/' | relative_url }}) (articles, projects, etc.)
 
 The habit definitions themselves are curated and versioned to preserve clarity and continuity. The maintainer retains final editorial authority.
 

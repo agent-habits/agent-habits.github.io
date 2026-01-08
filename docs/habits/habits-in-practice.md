@@ -122,3 +122,5 @@ It is not intended to dictate implementation details or replace engineering judg
 The habits describe patterns that tend to hold across domains and technologies.
 
 They are most useful when treated as tools for reasoning, not as rules to enforce.
+
+For concrete examples, see the curated list on the [Resources]({{ '/resources/' | relative_url }}) page.

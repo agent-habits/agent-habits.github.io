@@ -14,6 +14,11 @@ The goal is to provide a living repository of practical examples that show these
 
 This section contains links to articles, blog posts, and other discussions related to the Habits.
 
+### General Framework
+
+*   **[The Anatomy of a Mature Agent: A Field Guide](https://open.substack.com/pub/eurekamind/p/the-anatomy-of-a-mature-agent-a-field)**
+    *   An article illustrating the seven habits through two practical scenarios: "The Shield," a safety-optimized customer support agent, and "The Mechanic," an autonomy-optimized internal operations agent.
+
 ### Habit 1: Clearly Bounded Role
 
 * **[Why Agents Need Authority, Not Vibes](https://eurekamind.substack.com/p/why-agents-need-authority-not-vibes)**

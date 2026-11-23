@@ -2,3 +2,8 @@
 docs/_site/
 docs/.jekyll-cache/
 tmp/*
+
+# Node / Astro
+node_modules/
+dist/
+.astro/

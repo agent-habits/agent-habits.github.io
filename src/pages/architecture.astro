@@ -1,0 +1,845 @@
+---
+// src/pages/architecture.astro
+import ManualLayout from '../layouts/ManualLayout.astro';
+
+const stations = [
+  {
+    num: '01',
+    habit: 'Clearly Bounded Role',
+    habitHref: '/habits/habit-1/',
+    visual: 'The Fenced Workcell',
+    description: 'A technician robot operates within a secured perimeter fence equipped only with domain-specific tools and a dedicated schematic terminal.',
+    architecture: 'Limits blast radius. Broad authority without bounded scope is not autonomy—it is abdication. Failures within a bounded role are diagnosable rather than catastrophic.',
+    coords: { left: 21.5, top: 30.0, placement: 'bottom' },
+  },
+  {
+    num: '02',
+    habit: 'Embedded in Workflows',
+    habitHref: '/habits/habit-2/',
+    visual: 'The Conveyor Belt Assembly',
+    description: 'An industrial robotic arm handles microchip components directly on an active assembly conveyor without halting or replacing the factory line.',
+    architecture: 'Agents create maximum leverage when they operate as translation steps inside existing pipelines, emitting structured signals that downstream systems and humans can consume.',
+    coords: { left: 48.5, top: 29.0, placement: 'bottom' },
+  },
+  {
+    num: '03',
+    habit: 'Explicit Constraints',
+    habitHref: '/habits/habit-3/',
+    visual: 'The Security & Escalation HUD',
+    description: 'A glowing transparent interface displays a "READ-ONLY" security lock, a red "STOP" barrier, and a designated "HUMAN ESCALATION" side channel.',
+    architecture: 'Permissions, boundaries, and escalation paths must be first-class interface primitives, not afterthought guardrails buried in prompt text.',
+    coords: { left: 77.5, top: 30.5, placement: 'bottom-left' },
+  },
+  {
+    num: '04',
+    habit: 'Defers Irreversibility',
+    habitHref: '/habits/habit-4/',
+    visual: 'The Approval Gate Fork',
+    description: 'The pipeline bifurcates: low-risk recommendations proceed smoothly, while high-impact actions halt at an illuminated gate marked "HUMAN APPROVAL REQUIRED".',
+    architecture: 'Escalation is treated as an architectural feature, not a failure. Reversible actions can be assisted; irreversible commits must defer to authorized human policy.',
+    coords: { left: 16.5, top: 68.0, placement: 'top' },
+  },
+  {
+    num: '05',
+    habit: 'Optimizes for System Outcomes',
+    habitHref: '/habits/habit-5/',
+    visual: 'The System Metrics Cockpit',
+    description: 'A human supervisor and agent stand together monitoring an operational telemetry board showing "Cognitive Load: Low", "Reduced Churn", and "Improved Reliability".',
+    architecture: 'Success is measured by overall system health and reduced cognitive fatigue, not local model token throughput or isolated completion rates.',
+    coords: { left: 39.0, top: 68.0, placement: 'top' },
+  },
+  {
+    num: '06',
+    habit: 'Progress Through Structure',
+    habitHref: '/habits/habit-6/',
+    visual: 'The Unstructured Intake Funnel',
+    description: 'A wide intake funnel captures a swirling storm of chaotic, unstructured inputs and channels them into structured rack servers and relational storage arrays.',
+    architecture: 'Maturity tightens interfaces, schemas, and playbooks. Adding structure does not constrain capability—it makes advanced capabilities safe to deploy at scale.',
+    coords: { left: 61.0, top: 68.5, placement: 'top' },
+  },
+  {
+    num: '07',
+    habit: 'Visible Accountability',
+    habitHref: '/habits/habit-7/',
+    visual: 'The Audit Provenance Ledger',
+    description: 'An auditor with a magnifying glass inspects an illuminated provenance ledger showing "1. OWNER: AGENT A", "2. WHY: RULE XYZ", and "3. DATA: DOC 123".',
+    architecture: 'Every meaningful action must trace who owned it, why it happened, and what data informed it. Without visible accountability, trust cannot be audited or maintained.',
+    coords: { left: 85.0, top: 68.5, placement: 'top-left' },
+  },
+];
+
+const headings = [
+  { depth: 2, slug: 'interactive-pipeline', text: 'Interactive Pipeline Schematic' },
+  { depth: 2, slug: 'station-breakdown', text: 'Station-by-Station Tour' },
+  { depth: 2, slug: 'physical-metaphor', text: 'Why the Industrial Metaphor Matters' },
+];
+---
+
+<ManualLayout
+  title="Visual Architecture: The Factory Pipeline"
+  description="An interactive isometric walkthrough of the seven habits operating as an industrial automation pipeline."
+  headings={headings}
+  prevPage={{ label: 'The Seven Habits', href: '/habits/' }}
+  nextPage={{ label: 'Governance Philosophy', href: '/governance/' }}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Visual Architecture' },
+  ]}
+>
+  <div class="page-header">
+    <div class="header-badge">
+      <span class="pill pill-gold">System Architecture</span>
+      <span class="pill pill-blue">Interactive Isometric Tour</span>
+    </div>
+    <h1>From Magic Demos to Reliable Infrastructure</h1>
+    <p class="lead-text">
+      The <strong>7 Agent Habits Framework</strong> conceptualized as a physical industrial assembly pipeline. Click any station pin on the diagram below to explore its live overlay, or use the interactive station bar.
+    </p>
+  </div>
+
+  <!-- Interactive Graphic Section -->
+  <section id="interactive-pipeline" class="schematic-section">
+    <div class="schematic-card">
+      <!-- Interactive Station Control Bar -->
+      <div class="schematic-controls">
+        <span class="controls-label">Interactive Stations:</span>
+        <div class="station-pills-bar" role="tablist">
+          {stations.map((s) => (
+            <button class="station-tab-btn" data-station={s.num} role="tab" aria-selected="false">
+              <span class="tab-num">{s.num}</span>
+              <span class="tab-label">{s.habit.split(':')[0]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Main Interactive Diagram Canvas with Hotspots and Overlays -->
+      <div class="schematic-image-wrap" id="schematic-canvas">
+        <picture>
+          <source srcset="/assets/images/infographic.7.agent.habits.webp" type="image/webp" />
+          <img
+            src="/assets/images/infographic.7.agent.habits.webp"
+            alt="The 7 Agent Habits Framework Isometric Schematic"
+            class="schematic-img"
+            loading="eager"
+            width="2816"
+            height="1536"
+          />
+        </picture>
+
+        <!-- Hotspot Pins and Dynamic Popover Overlays -->
+        {stations.map((s) => (
+          <div
+            class={`hotspot-container placement-${s.coords.placement}`}
+            style={`left: ${s.coords.left}%; top: ${s.coords.top}%;`}
+            data-station-container={s.num}
+          >
+            <!-- Hotspot Node / Pin Button -->
+            <button
+              class="hotspot-pin"
+              data-station-pin={s.num}
+              aria-label={`Inspect Station ${s.num}: ${s.habit}`}
+              aria-expanded="false"
+            >
+              <span class="pin-radar"></span>
+              <span class="pin-badge">{s.num}</span>
+            </button>
+
+            <!-- Interactive Popover Overlay Card -->
+            <div class="hotspot-overlay" data-station-overlay={s.num} role="dialog" aria-hidden="true">
+              <div class="overlay-header">
+                <div class="overlay-meta">
+                  <span class="overlay-num">Station {s.num}</span>
+                  <span class="overlay-visual-tag">{s.visual}</span>
+                </div>
+                <button class="overlay-close-btn" data-close-overlay={s.num} aria-label="Close overlay">✕</button>
+              </div>
+
+              <h3 class="overlay-title">{s.habit}</h3>
+
+              <div class="overlay-body">
+                <div class="overlay-field">
+                  <span class="field-title">Visual Schematic:</span>
+                  <p class="field-text">{s.description}</p>
+                </div>
+                <div class="overlay-field">
+                  <span class="field-title">System Architecture:</span>
+                  <p class="field-text">{s.architecture}</p>
+                </div>
+              </div>
+
+              <div class="overlay-footer">
+                <a href={s.habitHref} class="overlay-btn-link">
+                  Read Habit {s.num} Definition →
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="schematic-footer">
+        <div class="instructions">
+          <span class="pulse-indicator"></span>
+          <span>Click any numbered station pin (<strong>01</strong>–<strong>07</strong>) on the schematic to inspect live architectural overlays.</span>
+        </div>
+        <a href="/assets/images/infographic.7.agent.habits.webp" target="_blank" rel="noopener" class="fullscreen-link">
+          Open Full-Res WebP ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Station by Station Breakdown -->
+  <section id="station-breakdown" class="stations-section">
+    <h2>Station-by-Station Tour</h2>
+    <p>
+      Explore how each station in the physical schematic maps directly to software primitives and governance interfaces:
+    </p>
+
+    <div class="stations-list">
+      {stations.map((station) => (
+        <div class="station-card" id={`station-${station.num}`} data-station-card={station.num}>
+          <div class="station-top">
+            <div class="station-badges">
+              <span class="station-pill">Station {station.num}</span>
+              <span class="visual-pill">{station.visual}</span>
+            </div>
+            <a href={station.habitHref} class="habit-link">
+              Habit {station.num}: {station.habit} →
+            </a>
+          </div>
+
+          <div class="station-body">
+            <div class="station-row">
+              <span class="row-label">Physical Representation:</span>
+              <span class="row-content">{station.description}</span>
+            </div>
+            <div class="station-row">
+              <span class="row-label">System Architecture:</span>
+              <span class="row-content">{station.architecture}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Metaphor Explanation -->
+  <section id="physical-metaphor" class="metaphor-section">
+    <h2>Why the Industrial Metaphor Matters</h2>
+    <p>
+      AI agents are frequently marketed with metaphors of human consciousness, thinking brains, or omniscient assistants. In enterprise production, however, these anthropomorphic framings obscure the real engineering requirements.
+    </p>
+    <div class="callout callout-gold">
+      <div class="callout-title">The Engineering Shift</div>
+      <p>
+        An agent in production is an <strong>actuator in an industrial process</strong>. Just like a high-speed robotic arm in an automotive plant:
+      </p>
+      <ul>
+        <li>It requires physical or logical perimeter guards (Habit 1: Bounded Role).</li>
+        <li>It performs standard operations within an existing assembly line (Habit 2: Embedded in Workflows).</li>
+        <li>It possesses hardware limit switches and read-only interlocks (Habit 3: Explicit Constraints).</li>
+        <li>It halts before high-consequence stamping dies without operator authorization (Habit 4: Defers Irreversibility).</li>
+        <li>It is judged by factory throughput, scrap rate, and worker safety (Habit 5: System Outcomes).</li>
+        <li>It relies on standardized jigs, fixtures, and playbooks (Habit 6: Progress Through Structure).</li>
+        <li>Every cycle logs serial numbers, timestamps, and sensor telemetry (Habit 7: Visible Accountability).</li>
+      </ul>
+    </div>
+  </section>
+</ManualLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .header-badge {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .schematic-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .schematic-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    background: var(--bg-surface);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Controls Bar */
+  .schematic-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--bg-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .controls-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .station-pills-bar {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+  }
+
+  .station-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+
+  .station-tab-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-subtle);
+    border-color: var(--border-strong);
+  }
+
+  .station-tab-btn.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+  }
+
+  .tab-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+  }
+
+  /* Interactive Image Canvas & Hotspots */
+  .schematic-image-wrap {
+    position: relative;
+    width: 100%;
+    background: #090d16;
+    overflow: visible;
+  }
+
+  .schematic-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Hotspot Pin Container */
+  .hotspot-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+  }
+
+  .hotspot-container.active {
+    z-index: 40;
+  }
+
+  /* Glowing Pin Button */
+  .hotspot-pin {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #090d16;
+    border: 2px solid var(--accent-gold);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hotspot-pin:hover,
+  .hotspot-container.active .hotspot-pin {
+    transform: scale(1.2);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.9);
+  }
+
+  .pin-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    line-height: 1;
+    z-index: 2;
+  }
+
+  .hotspot-container.active .pin-badge {
+    color: var(--accent-blue);
+  }
+
+  .pin-radar {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+    opacity: 0.8;
+    animation: radar-pulse 2s infinite;
+    pointer-events: none;
+  }
+
+  .hotspot-container.active .pin-radar {
+    border-color: var(--accent-blue);
+  }
+
+  @keyframes radar-pulse {
+    0% { transform: scale(0.8); opacity: 0.9; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  /* Interactive Popover Overlay Card */
+  .hotspot-overlay {
+    position: absolute;
+    width: 320px;
+    padding: 1.25rem;
+    background: rgba(9, 13, 22, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-glow);
+    border-top: 3px solid var(--accent-gold);
+    border-radius: 12px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px var(--border-glow);
+    color: #f8fafc;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 50;
+  }
+
+  .hotspot-container.active .hotspot-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
+  /* Popover Placements */
+  .placement-bottom .hotspot-overlay {
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  .placement-bottom.active .hotspot-overlay {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .placement-bottom-left .hotspot-overlay {
+    top: calc(100% + 14px);
+    right: 0;
+    left: auto;
+    transform: scale(0.95);
+  }
+
+  .placement-bottom-left.active .hotspot-overlay {
+    transform: scale(1);
+  }
+
+  .placement-top .hotspot-overlay {
+    bottom: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  .placement-top.active .hotspot-overlay {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .placement-top-left .hotspot-overlay {
+    bottom: calc(100% + 14px);
+    right: 0;
+    left: auto;
+    transform: scale(0.95);
+  }
+
+  .placement-top-left.active .hotspot-overlay {
+    transform: scale(1);
+  }
+
+  /* Popover Inner Styles */
+  .overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.65rem;
+  }
+
+  .overlay-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .overlay-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    background: var(--accent-gold-bg);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+  }
+
+  .overlay-visual-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+  }
+
+  .overlay-close-btn {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    line-height: 1;
+  }
+
+  .overlay-close-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .overlay-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  .overlay-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .field-title {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 0.15rem;
+  }
+
+  .field-text {
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .overlay-footer {
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .overlay-btn-link {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-decoration: none !important;
+  }
+
+  .overlay-btn-link:hover {
+    color: #7dd3fc;
+    text-decoration: underline !important;
+  }
+
+  /* Schematic Footer */
+  .schematic-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .instructions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .pulse-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
+  }
+
+  .fullscreen-link {
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+
+  .fullscreen-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Station list card styling */
+  .stations-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .stations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .station-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-left: 4px solid var(--accent-blue);
+    transition: all 0.2s ease;
+  }
+
+  .station-card.highlighted {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 16px var(--border-glow);
+    transform: translateX(4px);
+  }
+
+  .station-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .station-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .station-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    background: var(--accent-gold-bg);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+  }
+
+  .visual-pill {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .habit-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+
+  .habit-link:hover {
+    text-decoration: underline;
+  }
+
+  .station-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+  }
+
+  .station-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .row-label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .row-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .metaphor-section {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hotspot-overlay {
+      width: 260px;
+      padding: 1rem;
+    }
+
+    .hotspot-pin {
+      width: 26px;
+      height: 26px;
+    }
+
+    .pin-badge {
+      font-size: 0.65rem;
+    }
+
+    .schematic-controls {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  let activeStation = null;
+
+  function setStation(stationNum) {
+    // If clicking the currently active station, close it
+    if (activeStation === stationNum) {
+      clearStation();
+      return;
+    }
+
+    activeStation = stationNum;
+
+    // Update hotspot containers
+    document.querySelectorAll('[data-station-container]').forEach((container) => {
+      const isMatch = container.getAttribute('data-station-container') === stationNum;
+      container.classList.toggle('active', isMatch);
+      const pin = container.querySelector('[data-station-pin]');
+      if (pin) pin.setAttribute('aria-expanded', isMatch ? 'true' : 'false');
+      const overlay = container.querySelector('[data-station-overlay]');
+      if (overlay) overlay.setAttribute('aria-hidden', isMatch ? 'false' : 'true');
+    });
+
+    // Update control tabs
+    document.querySelectorAll('[data-station]').forEach((btn) => {
+      const isMatch = btn.getAttribute('data-station') === stationNum;
+      btn.classList.toggle('active', isMatch);
+      btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+    });
+
+    // Highlight card in list below
+    document.querySelectorAll('[data-station-card]').forEach((card) => {
+      const isMatch = card.getAttribute('data-station-card') === stationNum;
+      card.classList.toggle('highlighted', isMatch);
+    });
+  }
+
+  function clearStation() {
+    activeStation = null;
+    document.querySelectorAll('[data-station-container]').forEach((c) => {
+      c.classList.remove('active');
+      const pin = c.querySelector('[data-station-pin]');
+      if (pin) pin.setAttribute('aria-expanded', 'false');
+      const overlay = c.querySelector('[data-station-overlay]');
+      if (overlay) overlay.setAttribute('aria-hidden', 'true');
+    });
+    document.querySelectorAll('[data-station]').forEach((b) => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('[data-station-card]').forEach((c) => {
+      c.classList.remove('highlighted');
+    });
+  }
+
+  // Pin button clicks
+  document.querySelectorAll('[data-station-pin]').forEach((pin) => {
+    pin.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const num = pin.getAttribute('data-station-pin');
+      if (num) setStation(num);
+    });
+  });
+
+  // Tab bar buttons
+  document.querySelectorAll('[data-station]').forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const num = tab.getAttribute('data-station');
+      if (num) {
+        setStation(num);
+        const canvas = document.getElementById('schematic-canvas');
+        if (canvas) canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+
+  // Close buttons inside popovers
+  document.querySelectorAll('[data-close-overlay]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearStation();
+    });
+  });
+
+  // Clicking outside on the canvas closes active overlay
+  document.addEventListener('click', (e) => {
+    const isInsideHotspot = e.target.closest('.hotspot-container') || e.target.closest('.station-tab-btn');
+    if (!isInsideHotspot) {
+      clearStation();
+    }
+  });
+
+  // Keyboard navigation (Escape key closes overlay)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      clearStation();
+    }
+  });
+</script>

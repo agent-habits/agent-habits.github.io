@@ -1,0 +1,173 @@
+---
+// Footer.astro
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-line">
+          <img src="/assets/images/logo.svg" alt="Agentic Systems Habits" width="24" height="24" />
+          <span class="brand-name">Agentic Systems Habits</span>
+        </div>
+        <p class="brand-tagline">
+          A canonical design lens and governance framework for production-grade agentic systems.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="link-col">
+          <span class="col-title">Framework</span>
+          <a href="/habits/">The 7 Habits</a>
+          <a href="/architecture/">Architecture Tour</a>
+          <a href="/governance/">Governance Model</a>
+          <a href="/habits/habits-in-practice/">In Practice</a>
+        </div>
+
+        <div class="link-col">
+          <span class="col-title">Ecosystem</span>
+          <a href="/badge/">Get the Badge</a>
+          <a href="/badge/usage/">Usage Guidelines</a>
+          <a href="/resources/">Case Studies</a>
+          <a href="https://github.com/agent-habits/agent-habits.github.io/blob/main/tools/self-assessment.md" target="_blank" rel="noopener">Self-Assessment ↗</a>
+        </div>
+
+        <div class="link-col">
+          <span class="col-title">Project</span>
+          <a href="https://github.com/agent-habits/agent-habits.github.io" target="_blank" rel="noopener">GitHub Repository</a>
+          <a href="https://github.com/agent-habits/agent-habits.github.io/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+          <a href="https://github.com/agent-habits/agent-habits.github.io/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a>
+          <a href="https://inbarrose.com" target="_blank" rel="noopener">Inbar Rose ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        Created & Curated by <a href="https://inbarrose.com" target="_blank" rel="noopener" class="author-link">Inbar Rose</a>. Released under the MIT License.
+      </p>
+      <div class="status-pill-wrap">
+        <span class="pill pill-gold">Canonical Architecture Framework</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-subtle);
+    padding: 3rem 1.25rem 2rem;
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    max-width: 360px;
+  }
+
+  .brand-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .brand-tagline {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .footer-links-group {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .link-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .col-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .link-col a {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .link-col a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+
+  .copyright-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .author-link {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .author-link:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .footer-top {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-links-group {
+      gap: 2rem;
+    }
+  }
+</style>

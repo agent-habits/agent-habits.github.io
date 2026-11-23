@@ -1,0 +1,22 @@
+{
+    "name": "Agentic Systems Habits",
+    "short_name": "7AgentHabits",
+    "description": "A collection of good habits for building and using agentic systems effectively.",
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "/assets/images/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#0a66c2",
+    "background_color": "#ffffff"
+}

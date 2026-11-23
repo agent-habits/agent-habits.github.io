@@ -1,0 +1,753 @@
+---
+// index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const habits = [
+  {
+    num: '01',
+    title: 'Clearly Bounded Role',
+    category: 'Blast Radius & Scope',
+    blurb: 'Narrow, well-scoped responsibilities that limit blast radius and set clear expectations.',
+    href: '/habits/habit-1/',
+  },
+  {
+    num: '02',
+    title: 'Embedded in Workflows',
+    category: 'System Integration',
+    blurb: 'Agents work inside existing processes, producing structured signals humans and systems can act on.',
+    href: '/habits/habit-2/',
+  },
+  {
+    num: '03',
+    title: 'Explicit Constraints',
+    category: 'Interface Guardrails',
+    blurb: 'Permissions, limits, and escalation paths are part of the interface, not an afterthought.',
+    href: '/habits/habit-3/',
+  },
+  {
+    num: '04',
+    title: 'Defers Irreversibility',
+    category: 'Human-in-the-Loop',
+    blurb: 'Agents recommend and explain; irreversible actions require human or policy-controlled approval.',
+    href: '/habits/habit-4/',
+  },
+  {
+    num: '05',
+    title: 'Optimizes for System Outcomes',
+    category: 'Reliability & Metrics',
+    blurb: 'Success is measured by reliability, reduced cognitive load, and improved handoffs.',
+    href: '/habits/habit-5/',
+  },
+  {
+    num: '06',
+    title: 'Progress Through Structure',
+    category: 'Playbooks & Scaffolding',
+    blurb: 'Maturity tightens interfaces and playbooks; structure enables safer capability.',
+    href: '/habits/habit-6/',
+  },
+  {
+    num: '07',
+    title: 'Visible Accountability',
+    category: 'Auditability & Provenance',
+    blurb: 'Every meaningful action should show who owned it, why it happened, and what data informed it.',
+    href: '/habits/habit-7/',
+  },
+];
+---
+
+<BaseLayout
+  title="The 7 Habits of Effective Agentic Systems"
+  description="A canonical design lens and governance framework for production-grade agentic systems."
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge-wrap">
+        <span class="pill pill-gold">● Architectural Design Lens</span>
+        <span class="hero-badge-divider">•</span>
+        <span class="pill pill-blue">Production-Grade Principles</span>
+      </div>
+
+      <h1 class="hero-title">
+        The 7 Habits of Effective <br />
+        <span class="gradient-text">Agentic Systems</span>
+      </h1>
+
+      <p class="hero-lead">
+        Effective agentic systems are not autonomous actors. They are <strong>governed components</strong> with clearly bounded roles that are embedded into workflows to reduce ambiguity, improve decisions, and elevate system reliability without replacing accountability.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#habits-grid" class="btn btn-primary">
+          Explore the Habits ↓
+        </a>
+        <a href="/architecture/" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Interactive Factory Tour
+        </a>
+        <a href="/badge/" class="btn btn-secondary">
+          Adopt the Badge
+        </a>
+      </div>
+
+      <!-- Quick Metric / Anchor Bar -->
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <span class="metric-val">7</span>
+          <span class="metric-lbl">Canonical Habits</span>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric-item">
+          <span class="metric-val">Zero</span>
+          <span class="metric-lbl">Magic Autonomy</span>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric-item">
+          <span class="metric-val">100%</span>
+          <span class="metric-lbl">Governance-Driven</span>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric-item">
+          <span class="metric-val">MIT</span>
+          <span class="metric-lbl">Open Standard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 Habits Bento-Grid Section -->
+  <section id="habits-grid" class="habits-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill pill-blue">The Framework</span>
+        <h2 class="section-title">The Seven Canonical Habits</h2>
+        <p class="section-subtitle">
+          These habits are recurring structural properties observed in agentic systems that succeed in real production environments.
+        </p>
+      </div>
+
+      <div class="habits-grid">
+        {habits.map((habit) => (
+          <a href={habit.href} class="habit-card">
+            <div class="card-header">
+              <span class="card-number">{habit.num}</span>
+              <span class="card-category">{habit.category}</span>
+            </div>
+            <h3 class="card-title">{habit.title}</h3>
+            <p class="card-blurb">{habit.blurb}</p>
+            <div class="card-footer">
+              <span class="read-more">Read habit definition →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Architecture Spotlight Teaser -->
+  <section class="spotlight-section">
+    <div class="container">
+      <div class="spotlight-card">
+        <div class="spotlight-content">
+          <span class="pill pill-gold">System Architecture</span>
+          <h2 class="spotlight-title">From Magic Demos to Reliable Infrastructure</h2>
+          <p class="spotlight-text">
+            See how all seven habits physically connect as an integrated factory conveyor pipeline. From the bounded workbench to the constraint HUD, deferral security gate, and audit provenance ledger.
+          </p>
+          <div class="spotlight-actions">
+            <a href="/architecture/" class="btn btn-primary">
+              Launch Fullscreen Architecture Tour ➔
+            </a>
+          </div>
+        </div>
+
+        <div class="spotlight-visual">
+          <a href="/architecture/" aria-label="Explore the interactive architecture schematic">
+            <picture>
+              <source srcset="/assets/images/infographic.7.agent.habits.webp" type="image/webp" />
+              <img
+                src="/assets/images/infographic.7.agent.habits.webp"
+                alt="The 7 Agent Habits Framework Isometric Schematic"
+                class="spotlight-img"
+                loading="lazy"
+                width="720"
+                height="392"
+              />
+            </picture>
+            <div class="img-overlay-badge">Click to Explore Station-by-Station</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & Narrative ("Why This Exists") -->
+  <section class="philosophy-section">
+    <div class="container philosophy-container">
+      <div class="philosophy-block">
+        <span class="pill pill-blue">The Core Problem</span>
+        <h2>Why This Framework Exists</h2>
+        <p>
+          As AI agents become more capable, many teams attempt to grant them broad autonomy across workflows, systems, and business processes.
+        </p>
+        <p>
+          The outcome is often predictable: <strong>systems become harder to reason about, accountability blurs, and failures become surprising instead of diagnosable.</strong>
+        </p>
+        <p>
+          This project exists to offer an architectural alternative:
+        </p>
+        <ul class="styled-list">
+          <li><strong>Where Agents Belong:</strong> Focusing on interface boundaries rather than unconstrained capability.</li>
+          <li><strong>Governed Reliability:</strong> Prioritizing system outcomes, auditability, and predictability over raw autonomy.</li>
+          <li><strong>Shared Reference Point:</strong> Providing an unambiguous vocabulary for engineers, architects, and executive leadership.</li>
+        </ul>
+      </div>
+
+      <!-- Comparison Matrix: What This Is vs What This Is Not -->
+      <div class="matrix-grid">
+        <div class="matrix-card matrix-is">
+          <div class="matrix-header">
+            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <h3>What This Framework Is</h3>
+          </div>
+          <ul>
+            <li><strong>A Design Lens:</strong> Architectural principles for designing reliable systems.</li>
+            <li><strong>A Shared Vocabulary:</strong> Common terms to discuss permissions, blast radius, and deferral.</li>
+            <li><strong>Governance as Architecture:</strong> Treating constraints as first-class interfaces.</li>
+            <li><strong>Production-Grounded:</strong> Curated from real-world operations and postmortems.</li>
+          </ul>
+        </div>
+
+        <div class="matrix-card matrix-not">
+          <div class="matrix-header">
+            <svg class="cross-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <h3>What This Is Not</h3>
+          </div>
+          <ul>
+            <li><strong>Not a Framework/SDK:</strong> No code dependencies or proprietary runtimes.</li>
+            <li><strong>Not a Step-by-Step Tutorial:</strong> Habits are structural properties, not sequential stages.</li>
+            <li><strong>Not a Maturity Scorecard:</strong> We do not score or rank vendor tools.</li>
+            <li><strong>Not an Autonomy Guarantee:</strong> More model capability does not substitute for good boundaries.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badge Adoption Showcase -->
+  <section class="badge-showcase-section">
+    <div class="container">
+      <div class="badge-card">
+        <div class="badge-info">
+          <span class="pill pill-gold">Signal Your Design Intent</span>
+          <h2>Adopt the Agent Habits Badge</h2>
+          <p>
+            Projects that intentionally align with this framework display the badge in their repositories to signal bounded authority, explicit constraints, and designed accountability.
+          </p>
+          <div class="badge-preview-box">
+            <img src="/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="270" height="38" />
+          </div>
+        </div>
+
+        <div class="badge-snippet-wrap">
+          <span class="snippet-label">Copy Markdown for your README:</span>
+          <div class="code-copy-box">
+            <pre><code>[![Practices Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/)</code></pre>
+            <button id="copy-badge-btn" class="copy-btn" aria-label="Copy badge markdown snippet">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copy-text">Copy</span>
+            </button>
+          </div>
+          <p class="badge-disclaimer">
+            Badge usage is self-attested. <a href="/badge/usage/">Read badge usage guidelines →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Styles */
+  .hero-section {
+    padding: 5rem 1.25rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+    background: radial-gradient(circle at 50% 20%, var(--accent-blue-bg) 0%, transparent 60%);
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-badge-divider {
+    color: var(--text-muted);
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-lead {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 780px;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-metrics {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metric-val {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .metric-lbl {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .metric-sep {
+    width: 1px;
+    height: 32px;
+    background: var(--border-subtle);
+  }
+
+  /* Habits Bento-Grid */
+  .habits-section {
+    padding: 5rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .habits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .habit-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    text-decoration: none !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .habit-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-md), 0 0 20px var(--border-glow);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .card-number {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    background: var(--accent-gold-bg);
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+  }
+
+  .card-category {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.65rem;
+    line-height: 1.3;
+  }
+
+  .habit-card:hover .card-title {
+    color: var(--accent-blue);
+  }
+
+  .card-blurb {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .read-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+  }
+
+  /* Spotlight Section */
+  .spotlight-section {
+    padding: 3rem 0 5rem;
+  }
+
+  .spotlight-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem;
+    border-radius: 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-md);
+  }
+
+  .spotlight-title {
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    margin: 1rem 0;
+  }
+
+  .spotlight-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .spotlight-visual a {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .spotlight-visual a:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg), 0 0 25px var(--border-glow);
+  }
+
+  .spotlight-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-overlay-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(9, 13, 22, 0.85);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Philosophy & Comparison */
+  .philosophy-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-subtle);
+  }
+
+  .philosophy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .philosophy-block {
+    max-width: 820px;
+  }
+
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .styled-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    color: var(--text-secondary);
+  }
+
+  .styled-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: var(--accent-blue);
+  }
+
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .matrix-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .matrix-is {
+    border-top: 4px solid var(--accent-blue);
+  }
+
+  .matrix-not {
+    border-top: 4px solid var(--accent-gold);
+  }
+
+  .matrix-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .check-icon {
+    color: var(--accent-blue);
+  }
+
+  .cross-icon {
+    color: var(--accent-gold);
+  }
+
+  .matrix-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .matrix-card li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  /* Badge Showcase */
+  .badge-showcase-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .badge-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    border-radius: 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    align-items: center;
+  }
+
+  .badge-preview-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-subtle);
+    border-radius: 8px;
+    display: inline-flex;
+    border: 1px dashed var(--border-strong);
+  }
+
+  .badge-snippet-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .snippet-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .code-copy-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .code-copy-box pre {
+    margin: 0;
+    padding: 1rem 4.5rem 1rem 1rem;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    transition: all 0.15s ease;
+  }
+
+  .copy-btn:hover {
+    background: var(--bg-subtle);
+    border-color: var(--border-strong);
+  }
+
+  .badge-disclaimer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .spotlight-card,
+    .matrix-grid,
+    .badge-card {
+      grid-template-columns: 1fr;
+      padding: 1.75rem;
+      gap: 2rem;
+    }
+
+    .hero-metrics {
+      gap: 1.25rem;
+    }
+
+    .metric-sep {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  const copyBtn = document.getElementById('copy-badge-btn');
+  const copyText = document.getElementById('copy-text');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const code = '[![Practices Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/)';
+      navigator.clipboard.writeText(code).then(() => {
+        if (copyText) copyText.textContent = 'Copied!';
+        setTimeout(() => {
+          if (copyText) copyText.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+  }
+</script>

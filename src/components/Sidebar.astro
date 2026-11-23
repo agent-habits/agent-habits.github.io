@@ -1,0 +1,261 @@
+---
+// Sidebar.astro
+const currentPath = Astro.url.pathname;
+
+const sections = [
+  {
+    title: 'Foundations',
+    items: [
+      { label: 'Framework Overview', href: '/' },
+      { label: 'All Seven Habits', href: '/habits/' },
+      { label: 'Applying in Practice', href: '/habits/habits-in-practice/' },
+    ],
+  },
+  {
+    title: 'The Seven Habits',
+    items: [
+      { number: '01', label: 'Clearly Bounded Role', href: '/habits/habit-1/' },
+      { number: '02', label: 'Embedded in Workflows', href: '/habits/habit-2/' },
+      { number: '03', label: 'Explicit Constraints', href: '/habits/habit-3/' },
+      { number: '04', label: 'Defers Irreversibility', href: '/habits/habit-4/' },
+      { number: '05', label: 'Optimizes for Outcomes', href: '/habits/habit-5/' },
+      { number: '06', label: 'Progress Through Structure', href: '/habits/habit-6/' },
+      { number: '07', label: 'Visible Accountability', href: '/habits/habit-7/' },
+    ],
+  },
+  {
+    title: 'Visual Architecture',
+    items: [
+      { label: 'Interactive Factory Tour', href: '/architecture/' },
+    ],
+  },
+  {
+    title: 'Governance Primitives',
+    items: [
+      { label: 'Governance Philosophy', href: '/governance/' },
+    ],
+  },
+  {
+    title: 'Adoption & Ecosystem',
+    items: [
+      { label: 'Project Badge & Snippet', href: '/badge/' },
+      { label: 'Badge Usage Guidelines', href: '/badge/usage/' },
+      { label: 'Curated Resources', href: '/resources/' },
+      { label: 'Self-Assessment Tool ↗', href: 'https://github.com/agent-habits/agent-habits.github.io/blob/main/tools/self-assessment.md', external: true },
+    ],
+  },
+];
+---
+
+<aside id="manual-sidebar" class="manual-sidebar" aria-label="Documentation sidebar">
+  <div class="sidebar-inner">
+    <div class="sidebar-header-mobile">
+      <div class="sidebar-title-badge">
+        <span class="pill pill-gold">Manual Navigation</span>
+      </div>
+      <button id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    {sections.map((section) => (
+      <div class="sidebar-section">
+        <h4 class="section-heading">{section.title}</h4>
+        <ul class="section-list">
+          {section.items.map((item) => {
+            const isActive = currentPath === item.href || (item.href !== '/' && currentPath.endsWith(item.href));
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  class={`sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                  {item.number && <span class="habit-num">{item.number}</span>}
+                  <span class="link-label">{item.label}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </div>
+</aside>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+<style>
+  .manual-sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-subtle);
+    background: var(--bg-canvas);
+    height: calc(100vh - var(--header-h));
+    position: sticky;
+    top: var(--header-h);
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+
+  .sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .sidebar-header-mobile {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .sidebar-close-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: var(--text-muted);
+  }
+
+  .sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .section-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  .section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none !important;
+    transition: all 0.15s ease;
+  }
+
+  .sidebar-link:hover {
+    color: var(--text-primary);
+    background: var(--bg-subtle);
+  }
+
+  .sidebar-link.active {
+    color: var(--accent-blue);
+    font-weight: 600;
+    background: var(--accent-blue-bg);
+  }
+
+  .habit-num {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    background: var(--accent-gold-bg);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    line-height: 1;
+  }
+
+  .sidebar-link.active .habit-num {
+    color: var(--accent-blue);
+    background: rgba(2, 132, 199, 0.15);
+  }
+
+  .link-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .manual-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 100vh;
+      z-index: 100;
+      box-shadow: var(--shadow-lg);
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      width: min(320px, 85vw);
+    }
+
+    .manual-sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-header-mobile {
+      display: flex;
+    }
+
+    .sidebar-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .sidebar-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+</style>
+
+<script is:inline>
+  const closeBtn = document.getElementById('sidebar-close-btn');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const sidebar = document.getElementById('manual-sidebar');
+
+  function closeSidebar() {
+    if (sidebar) sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+</script>

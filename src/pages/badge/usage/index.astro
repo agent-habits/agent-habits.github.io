@@ -1,0 +1,114 @@
+---
+// src/pages/badge/usage/index.astro
+import ManualLayout from '../../../layouts/ManualLayout.astro';
+
+const headings = [
+  { depth: 2, slug: 'canonical-asset', text: 'Canonical Badge Asset' },
+  { depth: 2, slug: 'recommended-placement', text: 'Recommended Placement' },
+  { depth: 2, slug: 'eligibility-criteria', text: 'When to Use the Badge' },
+  { depth: 2, slug: 'self-assessment', text: 'Self-Assessment & Transparency' },
+];
+---
+
+<ManualLayout
+  title="Using the Agent Habits Badge"
+  description="Guidelines, expectations, and self-attestation standards for displaying the Agent Habits badge."
+  headings={headings}
+  prevPage={{ label: 'The Badge', href: '/badge/' }}
+  nextPage={{ label: 'Curated Resources', href: '/resources/' }}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Badge', href: '/badge/' },
+    { label: 'Usage Guidelines' },
+  ]}
+>
+  <div class="page-header">
+    <span class="pill pill-gold">Adoption Guide</span>
+    <h1>Using the Agent Habits Badge</h1>
+    <p class="lead-text">
+      This page outlines the operational guidelines for displaying the Agent Habits badge in your project repositories and documentation.
+    </p>
+  </div>
+
+  <section id="canonical-asset">
+    <h2>Canonical Badge Asset</h2>
+    <p>
+      The official badge is maintained as a scalable, high-DPI vector SVG:
+    </p>
+    <div class="asset-card">
+      <img src="/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="270" height="38" />
+      <span class="asset-url"><code>https://agent-habits.github.io/assets/badges/practices-agent-habits.svg</code></span>
+    </div>
+  </section>
+
+  <section id="recommended-placement">
+    <h2>Recommended Placement</h2>
+    <p>The badge is typically placed in visible documentation entry points:</p>
+    <ul>
+      <li><strong>Repository README:</strong> Positioned in the header badge strip alongside build status, license, and version badges.</li>
+      <li><strong>Engineering Manuals / Docs:</strong> Displayed on system architecture or governance overviews.</li>
+      <li><strong>RFCs & Design Documents:</strong> Highlighted when introducing new agentic components.</li>
+    </ul>
+    <p>
+      The badge should always link directly to <code>https://agent-habits.github.io/badge/</code> so contributors and consumers can immediately inspect its architectural meaning.
+    </p>
+  </section>
+
+  <section id="eligibility-criteria">
+    <h2>When to Use the Badge</h2>
+    <p>You should display the badge if your system:</p>
+    <ul>
+      <li><strong>Constrains Scope:</strong> Explicitly restricts agent authority to narrow, well-defined functions.</li>
+      <li><strong>Enforces Guardrails:</strong> Implements hard permissions and defined escalation tripwires.</li>
+      <li><strong>Embeds in Pipelines:</strong> Treats agents as translation steps within workflows rather than unbounded owners.</li>
+      <li><strong>Tracks Provenance:</strong> Treats failures as inspectable, diagnosable system events.</li>
+    </ul>
+    <div class="callout callout-gold">
+      <div class="callout-title">Intent Over Perfection</div>
+      <p>
+        You do not need to satisfy all seven habits with textbook perfection to display the badge. The badge reflects intentional alignment and active governance, not a claim of flawlessness.
+      </p>
+    </div>
+  </section>
+
+  <section id="self-assessment">
+    <h2>Self-Assessment & Transparency</h2>
+    <p>
+      Badge adoption is entirely self-attested. To maintain community credibility, teams are encouraged (though not required) to:
+    </p>
+    <ol>
+      <li>Complete the <a href="https://github.com/agent-habits/agent-habits.github.io/blob/main/tools/self-assessment.md" target="_blank" rel="noopener">Self-Assessment Template ↗</a>.</li>
+      <li>Document known tradeoffs and current governance boundaries in your project documentation.</li>
+      <li>Share operational postmortems and failure lessons back with the community.</li>
+    </ol>
+  </section>
+</ManualLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .asset-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    margin: 1.25rem 0 2rem;
+    flex-wrap: wrap;
+  }
+
+  .asset-url {
+    font-size: 0.85rem;
+  }
+</style>

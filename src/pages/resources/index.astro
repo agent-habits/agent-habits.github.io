@@ -1,0 +1,199 @@
+---
+// src/pages/resources/index.astro
+import ManualLayout from '../../layouts/ManualLayout.astro';
+
+const articles = [
+  {
+    category: 'General Framework',
+    title: 'The Anatomy of a Mature Agent: A Field Guide',
+    href: 'https://open.substack.com/pub/eurekamind/p/the-anatomy-of-a-mature-agent-a-field',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Illustrates the seven habits through two practical scenarios: "The Shield" (safety-optimized customer support) and "The Mechanic" (autonomy-optimized internal operations).',
+  },
+  {
+    category: 'Habit 1: Clearly Bounded Role',
+    title: 'Why Agents Need Authority, Not Vibes',
+    href: 'https://eurekamind.substack.com/p/why-agents-need-authority-not-vibes',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Exposes the danger of vague responsibilities in agentic initiatives. Introduces Habit 1 to explicitly bound what an agent owns and what it must never touch.',
+  },
+  {
+    category: 'Habit 2: Embedded in Workflows',
+    title: 'Agents Are Steps, Not Owners',
+    href: 'https://eurekamind.substack.com/p/agents-are-steps-not-owners',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Argues against granting agents end-to-end workflow ownership. Advocates embedding agents as translation layers within existing policy-rich automation systems.',
+  },
+  {
+    category: 'Habit 3: Explicit Constraints',
+    title: 'What an Agent Can’t Do Matters More Than What It Can',
+    href: 'https://eurekamind.substack.com/p/what-an-agent-cant-do-matters-more',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Addresses the LLM tendency to overpromise. Explains how hard system-enforced constraints (such as read-only tokens) establish durable trust.',
+  },
+  {
+    category: 'Habit 4: Defers Irreversibility',
+    title: 'Escalation Is an Agent Feature, Not a Failure',
+    href: 'https://eurekamind.substack.com/p/escalation-is-an-agent-feature-not',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Reframes escalation as an engineered capability rather than an exception. Agents propose and explain, deferring irreversible execution to human judgment.',
+  },
+  {
+    category: 'Habit 5: Optimizes for System Outcomes',
+    title: 'Smart Agents, Broken Systems',
+    href: 'https://eurekamind.substack.com/p/smart-agents-broken-systems',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Deconstructs the "Busy Fool" paradox where agents look hyper-productive on local task metrics while increasing downstream system chaos and cognitive debt.',
+  },
+  {
+    category: 'Habit 6: Progress Through Structure',
+    title: 'Predictability is the Point',
+    href: 'https://eurekamind.substack.com/p/predictability-is-the-point',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Discusses why mature systems increase structure over time. Guardrails, playbooks, and schemas enable advanced agentic capability to deploy safely.',
+  },
+  {
+    category: 'Habit 7: Visible Accountability',
+    title: 'Accountability Is a Feature',
+    href: 'https://eurekamind.substack.com/p/accountability-is-a-feature',
+    publication: 'Eureka Mind (Substack)',
+    summary: 'Details how generating structured decision metadata (Owner, Why, Source Data) makes actions auditable, turning failures into diagnosable improvements.',
+  },
+];
+
+const headings = [
+  { depth: 2, slug: 'articles-field-guides', text: 'Articles & Field Guides' },
+  { depth: 2, slug: 'contributing-resources', text: 'Contributing Case Studies' },
+];
+---
+
+<ManualLayout
+  title="Curated Resources & Field Guides"
+  description="Curated articles, deep-dives, and production case studies exploring the Seven Habits of Effective Agentic Systems."
+  headings={headings}
+  prevPage={{ label: 'Using the Badge', href: '/badge/usage/' }}
+  nextPage={{ label: 'Framework Overview', href: '/' }}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Curated Resources' },
+  ]}
+>
+  <div class="page-header">
+    <span class="pill pill-gold">Ecosystem Resources</span>
+    <h1>Curated Resources & Field Guides</h1>
+    <p class="lead-text">
+      A living repository of articles, field guides, and discussions illustrating the <strong>Seven Habits of Effective Agentic Systems</strong> across production environments.
+    </p>
+  </div>
+
+  <section id="articles-field-guides" class="articles-section">
+    <h2>Articles & Deep-Dives</h2>
+    <div class="articles-grid">
+      {articles.map((item) => (
+        <a href={item.href} target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-header">
+            <span class="article-category">{item.category}</span>
+            <span class="article-source">{item.publication} ↗</span>
+          </div>
+          <h3 class="article-title">{item.title}</h3>
+          <p class="article-summary">{item.summary}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="contributing-resources" class="contribute-section">
+    <h2>Contributing Case Studies</h2>
+    <p>
+      Have you applied the seven habits to a production system, conducted an incident postmortem, or authored a pattern analysis?
+    </p>
+    <div class="callout callout-blue">
+      <div class="callout-title">Submit a Resource or Case Study</div>
+      <p>
+        We actively welcome community contributions. To propose an article, repo, or postmortem for this page, open a pull request or start a discussion on GitHub.
+      </p>
+      <a href="https://github.com/agent-habits/agent-habits.github.io" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.75rem;">
+        Open an Issue or PR on GitHub ↗
+      </a>
+    </div>
+  </section>
+</ManualLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .article-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none !important;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .article-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .article-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .article-category {
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .article-source {
+    color: var(--text-muted);
+  }
+
+  .article-title {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+  }
+
+  .article-card:hover .article-title {
+    color: var(--accent-blue);
+  }
+
+  .article-summary {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .contribute-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+</style>

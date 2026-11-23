@@ -1,0 +1,206 @@
+---
+// ManualLayout.astro
+import BaseLayout from './BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface PageNav {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  headings?: Heading[];
+  prevPage?: PageNav;
+  nextPage?: PageNav;
+  breadcrumbs?: { label: string; href?: string }[];
+}
+
+const {
+  title,
+  description,
+  headings = [],
+  prevPage,
+  nextPage,
+  breadcrumbs = [{ label: 'Home', href: '/' }, { label: title || 'Manual' }],
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="manual-container">
+    <Sidebar />
+
+    <main class="manual-main">
+      <article class="manual-article">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            {breadcrumbs.map((crumb, idx) => (
+              <li>
+                {crumb.href ? (
+                  <a href={crumb.href}>{crumb.label}</a>
+                ) : (
+                  <span aria-current="page">{crumb.label}</span>
+                )}
+                {idx < breadcrumbs.length - 1 && <span class="crumb-sep">/</span>}
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <!-- Article Content -->
+        <div class="article-body">
+          <slot />
+        </div>
+
+        <!-- Sequential Pagination (Previous / Next) -->
+        {(prevPage || nextPage) && (
+          <nav class="manual-pagination" aria-label="Pagination">
+            {prevPage ? (
+              <a href={prevPage.href} class="page-nav-card prev-card">
+                <span class="nav-direction">← Previous</span>
+                <span class="nav-title">{prevPage.label}</span>
+              </a>
+            ) : <div />}
+
+            {nextPage && (
+              <a href={nextPage.href} class="page-nav-card next-card">
+                <span class="nav-direction">Next →</span>
+                <span class="nav-title">{nextPage.label}</span>
+              </a>
+            )}
+          </nav>
+        )}
+      </article>
+    </main>
+
+    <TableOfContents headings={headings} />
+  </div>
+</BaseLayout>
+
+<style>
+  .manual-container {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: calc(100vh - var(--header-h));
+  }
+
+  .manual-main {
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem 3rem 4rem;
+  }
+
+  .manual-article {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  .breadcrumbs span[aria-current] {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .crumb-sep {
+    color: var(--border-strong);
+    user-select: none;
+  }
+
+  .article-body {
+    line-height: 1.75;
+  }
+
+  .manual-pagination {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .page-nav-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    background: var(--bg-surface);
+    text-decoration: none !important;
+    transition: all 0.15s ease;
+  }
+
+  .page-nav-card:hover {
+    border-color: var(--accent-blue);
+    background: var(--bg-subtle);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .next-card {
+    text-align: right;
+  }
+
+  .nav-direction {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+
+  .nav-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .page-nav-card:hover .nav-title {
+    color: var(--accent-blue);
+  }
+
+  @media (max-width: 900px) {
+    .manual-main {
+      padding: 1.75rem 1.25rem 3rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .manual-pagination {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

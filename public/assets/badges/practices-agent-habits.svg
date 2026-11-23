@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="38" viewBox="0 0 270 38" role="img" aria-label="Practices Effective Agent Habits">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b111e" />
+      <stop offset="50%" stop-color="#101828" />
+      <stop offset="100%" stop-color="#152136" />
+    </linearGradient>
+
+    <!-- Top Border Highlight -->
+    <linearGradient id="top-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="40%" stop-color="#d4af37" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Outer Border -->
+    <linearGradient id="stroke-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.22)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.06)" />
+    </linearGradient>
+
+    <!-- Core Glow Filter -->
+    <radialGradient id="gold-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Badge Body -->
+  <rect x="0.5" y="0.5" width="269" height="37" rx="8" fill="url(#bg-grad)" stroke="url(#stroke-grad)" />
+
+  <!-- Top Edge Highlight Line -->
+  <path d="M 8 1.5 L 262 1.5" stroke="url(#top-border)" stroke-width="1.2" stroke-linecap="round" />
+
+  <!-- Emblem Glow -->
+  <circle cx="24" cy="19" r="14" fill="url(#gold-glow)" />
+
+  <!-- Emblem Icon (Scaled & Precision Aligned) -->
+  <g transform="translate(10, 5.5) scale(0.28)">
+    <g fill="none" stroke-width="2.5" stroke="#e2e8f0">
+      <!-- Shield Polygon -->
+      <polygon points="28,8 72,8 94,35 94,65 50,92 6,65 6,35" stroke="#94a3b8" stroke-width="3" fill="#090d16" fill-opacity="0.6" />
+
+      <!-- Golden Center Core -->
+      <rect x="42" y="42" width="16" height="16" stroke="#d4af37" stroke-width="3.5" fill="#d4af37" fill-opacity="0.2" />
+
+      <!-- Brackets -->
+      <path d="M 38,36 Q 33,36 33,44 Q 33,49 31,50 Q 33,51 33,56 Q 33,64 38,64" stroke="#38bdf8" stroke-width="2.5" />
+      <path d="M 62,36 Q 67,36 67,44 Q 67,49 69,50 Q 67,51 67,56 Q 67,64 62,64" stroke="#38bdf8" stroke-width="2.5" />
+
+      <!-- Left Circuit Traces -->
+      <polyline points="29,41 24,41 18,36" stroke="#94a3b8" />
+      <circle cx="18" cy="36" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+
+      <line x1="27" y1="50" x2="18" y2="50" stroke="#94a3b8" />
+      <circle cx="18" cy="50" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+
+      <polyline points="29,59 24,59 18,64" stroke="#94a3b8" />
+      <circle cx="18" cy="64" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+
+      <!-- Right Circuit Traces -->
+      <polyline points="71,41 76,41 82,36" stroke="#94a3b8" />
+      <circle cx="82" cy="36" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+
+      <line x1="73" y1="50" x2="82" y2="50" stroke="#94a3b8" />
+      <circle cx="82" cy="50" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+
+      <polyline points="71,59 76,59 82,64" stroke="#94a3b8" />
+      <circle cx="82" cy="64" r="3.5" fill="#38bdf8" stroke="#38bdf8" />
+    </g>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="44" y1="9" x2="44" y2="29" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+
+  <!-- Verification Dot -->
+  <circle cx="56" cy="19" r="3" fill="#10b981" />
+  <circle cx="56" cy="19" r="5" fill="#10b981" fill-opacity="0.25" />
+
+  <!-- Badge Typography -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <!-- Sub-label -->
+    <text x="68" y="15" font-size="8" font-weight="700" letter-spacing="1.2" fill="#94a3b8" text-transform="uppercase">
+      PRACTICES EFFECTIVE
+    </text>
+
+    <!-- Main Title -->
+    <text x="68" y="27" font-size="12" font-weight="700" letter-spacing="0.3" fill="#f8fafc">
+      AGENT HABITS
+    </text>
+
+    <!-- Framework Tag -->
+    <rect x="186" y="11" width="72" height="16" rx="4" fill="rgba(212, 175, 55, 0.15)" stroke="rgba(212, 175, 55, 0.35)" />
+    <text x="222" y="22.5" font-size="8" font-weight="700" letter-spacing="0.5" fill="#d4af37" text-anchor="middle">
+      GOVERNED
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,107 @@
+---
+// MarkdownHabitLayout.astro
+import ManualLayout from './ManualLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    habit_num?: string;
+    prev_label?: string;
+    prev_href?: string;
+    next_label?: string;
+    next_href?: string;
+  };
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { frontmatter, headings } = Astro.props;
+
+// Filter out h1 from headings if it was included
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+
+const prevPage = frontmatter.prev_href ? {
+  label: frontmatter.prev_label || 'Previous',
+  href: frontmatter.prev_href,
+} : undefined;
+
+const nextPage = frontmatter.next_href ? {
+  label: frontmatter.next_label || 'Next',
+  href: frontmatter.next_href,
+} : undefined;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Habits', href: '/habits/' },
+  { label: frontmatter.title.replace('Habit ', '').split(':')[0] || 'Detail' },
+];
+---
+
+<ManualLayout
+  title={frontmatter.title}
+  description={frontmatter.description || `Canonical definition and governance guide for ${frontmatter.title}.`}
+  headings={tocHeadings}
+  prevPage={prevPage}
+  nextPage={nextPage}
+  breadcrumbs={breadcrumbs}
+>
+  <div class="habit-markdown-content">
+    <slot />
+  </div>
+</ManualLayout>
+
+<style is:global>
+  .habit-markdown-content h1 {
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .habit-markdown-content h2 {
+    font-size: 1.4rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    position: relative;
+    padding-top: 0.5rem;
+  }
+
+  /* Style the One-sentence definition as an executive callout */
+  .habit-markdown-content h2:first-of-type + p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-subtle);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0 2rem;
+  }
+
+  /* Style Governance implications section */
+  .habit-markdown-content h2#governance-implications + p,
+  .habit-markdown-content h2#governance-implications ~ p {
+    color: var(--text-secondary);
+  }
+
+  .habit-markdown-content ul {
+    margin-bottom: 1.5rem;
+  }
+
+  .habit-markdown-content li {
+    margin-bottom: 0.4rem;
+    color: var(--text-secondary);
+  }
+
+  .habit-markdown-content strong {
+    color: var(--text-primary);
+  }
+
+  .habit-markdown-content hr {
+    border: 0;
+    border-top: 1px solid var(--border-subtle);
+    margin: 2.5rem 0;
+  }
+</style>

@@ -11,7 +11,7 @@ We actively welcome contributions in the following areas:
 - Examples of agentic systems that apply one or more habits in practice
 - Case studies, failure analyses, or postmortems grounded in real systems
 - Design patterns, tools, or workflows that support specific habits
-- Additions to the [Resources page](/docs/resources/index.md), such as articles, projects, or other external links
+- Additions to the [Resources page](https://agent-habits.github.io/resources/), such as articles, projects, or other external links
 - Constructive critiques and limitations based on hands-on experience
 - Clarifications or refinements that improve precision or readability
 
@@ -46,7 +46,7 @@ If your project applies the Agentic Systems Habits, you may submit it and it may
 
 Before submitting, we recommend completing the self-evaluation template:
 
-- Self-evaluation template: [Self-Evaluation Template](https://github.com/agent-habits/agent-habits.github.io/tools/self-assessment.md)
+- Self-evaluation template: [Self-Evaluation Template](tools/self-assessment.md) (or on GitHub: [tools/self-assessment.md](https://github.com/agent-habits/agent-habits.github.io/blob/main/tools/self-assessment.md))
 
 You may submit a summarized version of your evaluation rather than the full document.
 

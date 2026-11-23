@@ -1,0 +1,319 @@
+---
+// src/pages/badge/index.astro
+import ManualLayout from '../../layouts/ManualLayout.astro';
+
+const headings = [
+  { depth: 2, slug: 'get-the-badge', text: 'Get the Badge' },
+  { depth: 2, slug: 'what-the-badge-represents', text: 'What the Badge Represents' },
+  { depth: 2, slug: 'what-the-badge-is-not', text: 'What the Badge Is Not' },
+  { depth: 2, slug: 'how-projects-use-it', text: 'How Projects Use the Badge' },
+  { depth: 2, slug: 'relationship-to-governance', text: 'Relationship to Governance' },
+];
+
+const markdownSnippet = `[![Practices Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/badge/)`;
+const htmlSnippet = `<a href="https://agent-habits.github.io/badge/"><img src="https://agent-habits.github.io/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="190" height="32" /></a>`;
+const svgUrl = `https://agent-habits.github.io/assets/badges/practices-agent-habits.svg`;
+---
+
+<ManualLayout
+  title="Agent Habits Badge"
+  description="Signal your project's commitment to governed, reliable agentic systems design."
+  headings={headings}
+  prevPage={{ label: 'Governance Philosophy', href: '/governance/' }}
+  nextPage={{ label: 'Usage Guidelines', href: '/badge/usage/' }}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Agent Habits Badge' },
+  ]}
+>
+  <div class="page-header">
+    <span class="pill pill-gold">Project Adoption</span>
+    <h1>Agent Habits Badge</h1>
+    <p class="lead-text">
+      The Agent Habits badge signals that a project intentionally designs, evaluates, and operates agentic systems using the <strong>Agentic Systems Habits</strong> framework.
+    </p>
+  </div>
+
+  <div class="callout callout-gold">
+    <div class="callout-title">Declaration of Intent</div>
+    <p>
+      The badge is a declaration of design intent, not an audit or third-party certification. Projects that display this badge commit to reasoning explicitly about agent scope, constraints, deferral, accountability, and governance as their systems evolve.
+    </p>
+  </div>
+
+  <!-- Interactive Badge Generator / Snippet Box -->
+  <section id="get-the-badge" class="badge-embed-section">
+    <h2>Get the Badge</h2>
+    <div class="embed-card">
+      <div class="preview-strip">
+        <div class="preview-cell light-cell">
+          <span class="cell-label">Light Theme Preview</span>
+          <img src="/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="270" height="38" />
+        </div>
+        <div class="preview-cell dark-cell">
+          <span class="cell-label">Dark Theme Preview</span>
+          <img src="/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="270" height="38" />
+        </div>
+      </div>
+
+      <div class="snippet-controls">
+        <div class="format-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="md" role="tab" aria-selected="true">Markdown</button>
+          <button class="tab-btn" data-tab="html" role="tab" aria-selected="false">HTML</button>
+          <button class="tab-btn" data-tab="svg" role="tab" aria-selected="false">SVG URL</button>
+        </div>
+
+        <div class="snippet-display">
+          <pre id="snippet-code"><code>{markdownSnippet}</code></pre>
+          <button id="copy-snippet-btn" class="btn btn-secondary copy-snippet-btn" aria-label="Copy snippet code">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copy-status">Copy Snippet</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-the-badge-represents">
+    <h2>What the Badge Represents</h2>
+    <p>Displaying the badge signals that your engineering team:</p>
+    <ul>
+      <li>Uses the Agentic Systems Habits as an architectural design and review lens.</li>
+      <li>Treats agent behavior as a system design concern, not a prompt-only concern.</li>
+      <li>Explicitly reasons about permissions, escalation, and accountability.</li>
+      <li>Accepts that agentic systems require structure, guardrails, and playbooks to scale safely.</li>
+    </ul>
+    <p>The badge is intentionally lightweight. It is designed to encourage clarity, not gatekeeping.</p>
+  </section>
+
+  <section id="what-the-badge-is-not">
+    <h2>What the Badge Is Not</h2>
+    <p>The badge does <strong>not</strong> claim or guarantee that a project:</p>
+    <ul>
+      <li>Has implemented every habit with zero defects.</li>
+      <li>Has undergone a formal audit or commercial compliance review.</li>
+      <li>Claims universal best-in-class agentic capability.</li>
+      <li>Is immune to novel failure modes.</li>
+    </ul>
+    <p>Agentic systems are evolving rapidly. The badge reflects active participation in that evolution, not completion.</p>
+  </section>
+
+  <section id="how-projects-use-it">
+    <h2>How Projects Use the Badge</h2>
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <h3>Public Signal</h3>
+        <p>Placed in the repository <code>README.md</code> to publicly declare the system's design values and governance guardrails.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Architecture Reviews</h3>
+        <p>Used as an internal checklist during RFC and design reviews to ensure new capabilities don't expand blast radius without limits.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Shared Vocabulary</h3>
+        <p>Establishes common definitions between ML engineers, systems architects, and non-technical stakeholders.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Incident Postmortems</h3>
+        <p>Serves as a retrospective diagnostic tool following near-misses or behavioral drift in production.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+      For detailed usage scenarios and self-attestation instructions, see <a href="/badge/usage/">Using the Agent Habits Badge →</a>.
+    </p>
+  </section>
+
+  <section id="relationship-to-governance">
+    <h2>Relationship to Governance</h2>
+    <p>
+      The badge directly operationalizes the project’s <a href="/governance/">Governance Philosophy</a>. It reflects the conviction that governance is a structural property emerging from how agents are bounded, constrained, and audited.
+    </p>
+  </section>
+</ManualLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .badge-embed-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .embed-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--bg-surface);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .preview-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .preview-cell {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .light-cell {
+    background: #ffffff;
+    color: #0f172a;
+    border-right: 1px solid var(--border-subtle);
+  }
+
+  .dark-cell {
+    background: #090d16;
+    color: #f8fafc;
+  }
+
+  .cell-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+
+  .snippet-controls {
+    padding: 1.5rem;
+    background: var(--bg-subtle);
+  }
+
+  .format-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tab-btn {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    transition: all 0.15s ease;
+  }
+
+  .tab-btn.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+  }
+
+  .snippet-display {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+  }
+
+  .snippet-display pre {
+    margin: 0;
+    padding: 1rem 8rem 1rem 1.25rem;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .copy-snippet-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.82rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .use-case-card {
+    padding: 1.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+  }
+
+  .use-case-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .use-case-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 640px) {
+    .preview-strip,
+    .use-cases-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .light-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+  }
+</style>
+
+<script is:inline>
+  const snippets = {
+    md: `[![Practices Effective Agent Habits](https://agent-habits.github.io/assets/badges/practices-agent-habits.svg)](https://agent-habits.github.io/badge/)`,
+    html: `<a href="https://agent-habits.github.io/badge/"><img src="https://agent-habits.github.io/assets/badges/practices-agent-habits.svg" alt="Practices Effective Agent Habits" width="190" height="32" /></a>`,
+    svg: `https://agent-habits.github.io/assets/badges/practices-agent-habits.svg`,
+  };
+
+  let currentTab = 'md';
+  const codeElem = document.querySelector('#snippet-code code');
+  const copyBtn = document.getElementById('copy-snippet-btn');
+  const copyStatus = document.getElementById('copy-status');
+  const tabBtns = document.querySelectorAll('.tab-btn');
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTab = btn.getAttribute('data-tab');
+      if (codeElem) codeElem.textContent = snippets[currentTab];
+    });
+  });
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const textToCopy = snippets[currentTab];
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        if (copyStatus) copyStatus.textContent = 'Copied!';
+        setTimeout(() => {
+          if (copyStatus) copyStatus.textContent = 'Copy Snippet';
+        }, 2000);
+      });
+    });
+  }
+</script>

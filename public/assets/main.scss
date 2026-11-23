@@ -1,0 +1,38 @@
+/* no front-matter - keep as static SCSS file to avoid Jekyll Sass processing */
+/* Minimal stylesheet to avoid sass-embedded failures during local builds. */
+/* Keeps styles simple so the Sass compiler doesn't invoke the theme's heavy imports. */
+/* You can replace with a fuller SCSS later if desired. */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.site-content {
+    max-width: 72rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* keep header styles from site-header.css in effect */
+/* add minor spacing utilities */
+h1,
+h2,
+h3,
+h4 {
+    color: #0a0a0a;
+    margin-top: 1.2em;
+}

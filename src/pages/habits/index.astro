@@ -1,0 +1,303 @@
+---
+// src/pages/habits/index.astro
+import ManualLayout from '../../layouts/ManualLayout.astro';
+
+const habitsList = [
+  {
+    num: '1',
+    numPill: '01',
+    title: 'Clearly Bounded Role',
+    href: '/habits/habit-1/',
+    def: 'Effective agents serve a narrowly defined function within a larger system.',
+    desc: 'They are designed to reduce ambiguity in a specific domain, not to own outcomes end to end. A bounded role limits blast radius, clarifies expectations, and makes failures observable rather than mysterious.',
+  },
+  {
+    num: '2',
+    numPill: '02',
+    title: 'Embedded in Workflows',
+    href: '/habits/habit-2/',
+    def: 'Agents create the most value when they operate inside existing workflows rather than above or outside them.',
+    desc: 'They translate unstructured input into structured signals that downstream systems, automation, or humans can act on. They do not replace pipelines, policies, or execution engines.',
+  },
+  {
+    num: '3',
+    numPill: '03',
+    title: 'Explicit Constraints',
+    href: '/habits/habit-3/',
+    def: 'Effective agents operate under clearly defined permissions, limitations, and escalation paths.',
+    desc: 'Constraints are part of the interface. They define what the agent may do directly, what requires approval, and what is explicitly forbidden. Without constraints, autonomy becomes ambiguity.',
+  },
+  {
+    num: '4',
+    numPill: '04',
+    title: 'Defers Irreversibility',
+    href: '/habits/habit-4/',
+    def: 'Agents can propose, recommend, summarize, and explain.',
+    desc: 'They defer irreversible actions to humans or policy-controlled systems, especially when uncertainty is high or impact is large. Deferral is treated as a design feature, not a weakness.',
+  },
+  {
+    num: '5',
+    numPill: '05',
+    title: 'Optimizes for System Outcomes',
+    href: '/habits/habit-5/',
+    def: 'Effective agents are evaluated on system-level impact, not local intelligence.',
+    desc: 'Success is measured in reduced cognitive load, improved handoffs, faster resolution, and increased reliability. Clever behavior that degrades the system is not progress.',
+  },
+  {
+    num: '6',
+    numPill: '06',
+    title: 'Progress Through Structure',
+    href: '/habits/habit-6/',
+    def: 'As agentic systems mature, structure increases rather than decreases.',
+    desc: 'Interfaces narrow, permissions tighten, playbooks become explicit, and responsibilities become clearer. Progress looks like predictability, not freedom.',
+  },
+  {
+    num: '7',
+    numPill: '07',
+    title: 'Visible Accountability',
+    href: '/habits/habit-7/',
+    def: 'Well-designed agentic systems make ownership clearer, not fuzzier.',
+    desc: 'For meaningful actions, it should be possible to understand why a decision was made, what information was used, and who ultimately owned the outcome. When accountability decreases, the system is regressing.',
+  },
+];
+
+const headings = [
+  { depth: 2, slug: 'the-seven-habits', text: 'The Seven Habits' },
+  { depth: 2, slug: 'habit-1', text: '1. Clearly Bounded Role' },
+  { depth: 2, slug: 'habit-2', text: '2. Embedded in Workflows' },
+  { depth: 2, slug: 'habit-3', text: '3. Explicit Constraints' },
+  { depth: 2, slug: 'habit-4', text: '4. Defers Irreversibility' },
+  { depth: 2, slug: 'habit-5', text: '5. Optimizes for System Outcomes' },
+  { depth: 2, slug: 'habit-6', text: '6. Progress Through Structure' },
+  { depth: 2, slug: 'habit-7', text: '7. Visible Accountability' },
+  { depth: 2, slug: 'conclusion', text: 'Conclusion' },
+];
+---
+
+<ManualLayout
+  title="The Seven Habits of Effective Agentic Systems"
+  description="The canonical seven habits observed in agentic systems that reliably create value in real production environments."
+  headings={headings}
+  prevPage={{ label: 'Framework Overview', href: '/' }}
+  nextPage={{ label: 'Habit 1: Bounded Role', href: '/habits/habit-1/' }}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'The Seven Habits' },
+  ]}
+>
+  <div class="habits-header">
+    <span class="pill pill-gold">Framework Core</span>
+    <h1>The Seven Habits of Effective Agentic Systems</h1>
+    <p class="lead-text">
+      The habits described here are recurring design patterns observed in agentic systems that succeed in real production environments.
+    </p>
+
+    <div class="not-list">
+      <span class="not-item">✕ Not steps</span>
+      <span class="not-item">✕ Not a framework</span>
+      <span class="not-item">✕ Not prescriptive rules</span>
+    </div>
+
+    <p>
+      They are structural properties that tend to emerge when agentic systems are designed with intent, governance, and system-level thinking.
+    </p>
+
+    <div class="callout callout-gold">
+      <div class="callout-title">The Operational Reality</div>
+      <p>
+        When these habits are present, agentic systems are easier to reason about, safer to operate, and more valuable over time. When they are absent, failures are often surprising, difficult to diagnose, and expensive to unwind.
+      </p>
+    </div>
+  </div>
+
+  <!-- Visual Pipeline Banner -->
+  <div class="pipeline-banner">
+    <div class="banner-info">
+      <h3>Visual Factory Architecture</h3>
+      <p>Explore the physical isometric factory schematic connecting all seven habits.</p>
+      <a href="/architecture/" class="btn btn-secondary">Explore Interactive Tour ➔</a>
+    </div>
+    <div class="banner-preview">
+      <img src="/assets/images/infographic.7.agent.habits.webp" alt="Factory Pipeline" width="300" height="160" />
+    </div>
+  </div>
+
+  <section id="the-seven-habits" class="habits-detail-section">
+    {habitsList.map((habit) => (
+      <div class="habit-summary-card" id={`habit-${habit.num}`}>
+        <div class="card-top">
+          <span class="habit-num-tag">{habit.numPill}</span>
+          <h2 class="habit-heading">{habit.num}. {habit.title}</h2>
+        </div>
+
+        <p class="habit-definition">{habit.def}</p>
+        <p class="habit-description">{habit.desc}</p>
+
+        <div class="card-action">
+          <a href={habit.href} class="btn-link">
+            Explore {habit.title} Deep-Dive →
+          </a>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section id="conclusion" class="conclusion-section">
+    <h2>Conclusion</h2>
+    <p>
+      Effective agentic systems are not autonomous actors. They are governed components designed to reduce ambiguity, improve decisions, and increase system reliability without replacing accountability.
+    </p>
+    <div class="next-actions">
+      <a href="/habits/habits-in-practice/" class="btn btn-primary">Applying the Habits in Practice →</a>
+      <a href="/resources/" class="btn btn-secondary">Real-World Case Studies ↗</a>
+    </div>
+  </section>
+</ManualLayout>
+
+<style>
+  .habits-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .not-list {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .not-item {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg-subtle);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .pipeline-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    margin: 2.5rem 0;
+    gap: 1.5rem;
+  }
+
+  .banner-info h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  .banner-info p {
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+  }
+
+  .banner-preview img {
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .habits-detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .habit-summary-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.15s ease;
+  }
+
+  .habit-summary-card:hover {
+    border-color: var(--border-strong);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .habit-num-tag {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    background: var(--accent-gold-bg);
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+  }
+
+  .habit-heading {
+    margin: 0 !important;
+    font-size: 1.35rem;
+  }
+
+  .habit-definition {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .habit-description {
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-action {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .btn-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+
+  .conclusion-section {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .next-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .pipeline-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
